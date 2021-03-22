@@ -27,8 +27,9 @@
 namespace termTemplates;
 
 use rdfInterface\Quad as iQuad;
-use rdfInterface\QuadCompare as iQuadCompare;
+use rdfInterface\Term as iTerm;
 use rdfInterface\TermCompare as iTermCompare;
+use rdfInterface\QuadCompare as iQuadCompare;
 use rdfInterface\DefaultGraph as iDefaultGraph;
 
 /**
@@ -36,31 +37,51 @@ use rdfInterface\DefaultGraph as iDefaultGraph;
  *
  * @author zozlak
  */
-class QuadTemplate implements iQuadCompare {
+class QuadTemplate implements iTermCompare, iQuadCompare {
 
     public iTermCompare | null $subject;
     public iTermCompare | null $predicate;
     public iTermCompare | null $object;
-    public iTermCompare | null $graphIri;
+    public iTermCompare | null $graph;
 
     public function __construct(iTermCompare | null $subject = null,
                                 iTermCompare | null $predicate = null,
                                 iTermCompare | null $object = null,
-                                iTermCompare | null $graphIri = null) {
+                                iTermCompare | null $graph = null) {
         $this->subject   = $subject;
         $this->predicate = $predicate;
         $this->object    = $object;
-        $this->graphIri  = $graphIri;
+        $this->graph     = $graph;
     }
 
     public function __toString(): string {
-        return rtrim("$this->subject $this->predicate $this->object $this->graphIri");
+        return rtrim("$this->subject $this->predicate $this->object $this->graph");
     }
 
-    public function equals(iQuad $quad): bool {
-        return ($this->subject === null || $this->subject->equals($quad->getSubject())) &&
-            ($this->predicate === null || $this->predicate->equals($quad->getPredicate())) &&
-            ($this->object === null || $this->object->equals($quad->getObject())) &&
-            ($this->graphIri === null || $this->graphIri instanceof iDefaultGraph || $this->graphIri->equals($quad->getGraphIri()));
+    public function equals(iTerm $quad): bool {
+        if ($quad instanceof iQuad) {
+            return ($this->subject === null || $this->subject->equals($quad->getSubject())) &&
+                ($this->predicate === null || $this->predicate->equals($quad->getPredicate())) &&
+                ($this->object === null || $this->object->equals($quad->getObject())) &&
+                ($this->graph === null || $this->graph instanceof iDefaultGraph || $this->graph->equals($quad->getGraph()));
+        } else {
+            return false;
+        }
+    }
+
+    public function getSubject(): iTerm | iTermCompare | null {
+        return $this->subject;
+    }
+
+    public function getPredicate(): iTerm | iTermCompare | null {
+        return $this->predicate;
+    }
+
+    public function getObject(): iTerm | iTermCompare | null {
+        return $this->object;
+    }
+
+    public function getGraph(): iTerm | iTermCompare | null {
+        return $this->graph;
     }
 }
