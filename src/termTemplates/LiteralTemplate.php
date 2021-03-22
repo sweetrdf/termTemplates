@@ -41,8 +41,9 @@ class LiteralTemplate implements iTermCompare {
     public string | null $lang;
     public string | null $datatype;
 
-    public function __construct(?string $value = null, ?string $lang = null,
-                                ?string $datatype = null) {
+    public function __construct(string | null $value = null,
+                                string | null $lang = null,
+                                string | null $datatype = null) {
         $this->value    = $value;
         $this->lang     = $lang;
         $this->datatype = $datatype;
@@ -55,7 +56,7 @@ class LiteralTemplate implements iTermCompare {
     public function equals(iTerm $term): bool {
         if ($term instanceof iLiteral) {
             return ($this->value === null || $this->value === $term->getValue()) &&
-                ($this->lang === null || $this->lang === (string) $term->getLang()) &&
+                ($this->lang === null || $this->lang === '' && !empty($term->getLang()) || $this->lang === $term->getLang()) &&
                 ($this->datatype === null || $this->datatype === $term->getDatatype());
         } else {
             return false;

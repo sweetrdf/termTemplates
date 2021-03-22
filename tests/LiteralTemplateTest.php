@@ -58,9 +58,10 @@ class LiteralTemplateTest extends \PHPUnit\Framework\TestCase {
             ],
             3 => ['qt' => new LiteralTemplate('1', 'eng'), 'matches' => [1]],
             4 => [
-                'qt'      => new LiteralTemplate(1, null, RDF::XSD_INTEGER),
+                'qt'      => new LiteralTemplate((string) 1, null, RDF::XSD_INTEGER),
                 'matches' => [2]
             ],
+            5 => ['qt' => new LiteralTemplate(null, ''), 'matches' => [1, 3]],
         ];
         foreach ($lt as $n => $i) {
             foreach ($l as $m => $j) {
