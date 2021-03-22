@@ -80,4 +80,15 @@ class QuadTemplateTest extends \PHPUnit\Framework\TestCase {
             }
         }
     }
+
+    public function testGetters(): void {
+        $bn = DF::blankNode();
+        $nn = DF::namedNode('foo');
+        $l  = DF::literal('foo');
+        $q  = new QuadTemplate($bn, $nn, $l, $nn);
+        $this->assertEquals($bn, $q->getSubject());
+        $this->assertEquals($bn, $q->getPredicate());
+        $this->assertEquals($bn, $q->getObject());
+        $this->assertNull($q->getGraph());
+    }
 }
