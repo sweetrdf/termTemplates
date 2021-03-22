@@ -39,15 +39,15 @@ use rdfInterface\DefaultGraph as iDefaultGraph;
  */
 class QuadTemplate implements iTermCompare, iQuadCompare {
 
-    public iTermCompare | null $subject;
-    public iTermCompare | null $predicate;
-    public iTermCompare | null $object;
-    public iTermCompare | null $graph;
+    public iTermCompare | iTerm | null $subject;
+    public iTermCompare | iTerm | null $predicate;
+    public iTermCompare | iTerm | null $object;
+    public iTermCompare | iTerm | null $graph;
 
-    public function __construct(iTermCompare | null $subject = null,
-                                iTermCompare | null $predicate = null,
-                                iTermCompare | null $object = null,
-                                iTermCompare | null $graph = null) {
+    public function __construct(iTermCompare | iTerm | null $subject = null,
+                                iTermCompare | iTerm | null $predicate = null,
+                                iTermCompare | iTerm | null $object = null,
+                                iTermCompare | iTerm | null $graph = null) {
         $this->subject   = $subject;
         $this->predicate = $predicate;
         $this->object    = $object;
