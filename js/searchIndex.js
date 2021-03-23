@@ -1,6 +1,36 @@
 Search.appendIndex(
     [
                 {
+            "fqsen": "\\termTemplates\\LiteralRegexTemplate",
+            "name": "LiteralRegexTemplate",
+            "summary": "Description\u0020of\u0020LiteralTemplate",
+            "url": "classes/termTemplates-LiteralRegexTemplate.html"
+        },                {
+            "fqsen": "\\termTemplates\\LiteralRegexTemplate\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/termTemplates-LiteralRegexTemplate.html#method___construct"
+        },                {
+            "fqsen": "\\termTemplates\\LiteralRegexTemplate\u003A\u003A__toString\u0028\u0029",
+            "name": "__toString",
+            "summary": "",
+            "url": "classes/termTemplates-LiteralRegexTemplate.html#method___toString"
+        },                {
+            "fqsen": "\\termTemplates\\LiteralRegexTemplate\u003A\u003Aequals\u0028\u0029",
+            "name": "equals",
+            "summary": "",
+            "url": "classes/termTemplates-LiteralRegexTemplate.html#method_equals"
+        },                {
+            "fqsen": "\\termTemplates\\LiteralRegexTemplate\u003A\u003A\u0024lang",
+            "name": "lang",
+            "summary": "",
+            "url": "classes/termTemplates-LiteralRegexTemplate.html#property_lang"
+        },                {
+            "fqsen": "\\termTemplates\\LiteralRegexTemplate\u003A\u003A\u0024datatype",
+            "name": "datatype",
+            "summary": "",
+            "url": "classes/termTemplates-LiteralRegexTemplate.html#property_datatype"
+        },                {
             "fqsen": "\\termTemplates\\LiteralTemplate",
             "name": "LiteralTemplate",
             "summary": "Description\u0020of\u0020LiteralTemplate",
@@ -21,11 +51,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/termTemplates-LiteralTemplate.html#method_equals"
         },                {
-            "fqsen": "\\termTemplates\\LiteralTemplate\u003A\u003A\u0024value",
-            "name": "value",
-            "summary": "",
-            "url": "classes/termTemplates-LiteralTemplate.html#property_value"
-        },                {
             "fqsen": "\\termTemplates\\LiteralTemplate\u003A\u003A\u0024lang",
             "name": "lang",
             "summary": "",
@@ -35,6 +60,111 @@ Search.appendIndex(
             "name": "datatype",
             "summary": "",
             "url": "classes/termTemplates-LiteralTemplate.html#property_datatype"
+        },                {
+            "fqsen": "\\termTemplates\\NamedNodeRegexTemplate",
+            "name": "NamedNodeRegexTemplate",
+            "summary": "",
+            "url": "classes/termTemplates-NamedNodeRegexTemplate.html"
+        },                {
+            "fqsen": "\\termTemplates\\NamedNodeRegexTemplate\u003A\u003A__toString\u0028\u0029",
+            "name": "__toString",
+            "summary": "",
+            "url": "classes/termTemplates-NamedNodeRegexTemplate.html#method___toString"
+        },                {
+            "fqsen": "\\termTemplates\\NamedNodeRegexTemplate\u003A\u003Aequals\u0028\u0029",
+            "name": "equals",
+            "summary": "",
+            "url": "classes/termTemplates-NamedNodeRegexTemplate.html#method_equals"
+        },                {
+            "fqsen": "\\termTemplates\\NamedNodeTemplate",
+            "name": "NamedNodeTemplate",
+            "summary": "Description\u0020of\u0020AnyNamedNode",
+            "url": "classes/termTemplates-NamedNodeTemplate.html"
+        },                {
+            "fqsen": "\\termTemplates\\NamedNodeTemplate\u003A\u003A__toString\u0028\u0029",
+            "name": "__toString",
+            "summary": "",
+            "url": "classes/termTemplates-NamedNodeTemplate.html#method___toString"
+        },                {
+            "fqsen": "\\termTemplates\\NamedNodeTemplate\u003A\u003Aequals\u0028\u0029",
+            "name": "equals",
+            "summary": "",
+            "url": "classes/termTemplates-NamedNodeTemplate.html#method_equals"
+        },                {
+            "fqsen": "\\termTemplates\\NumericTemplate",
+            "name": "NumericTemplate",
+            "summary": "Description\u0020of\u0020AnyNamedNode",
+            "url": "classes/termTemplates-NumericTemplate.html"
+        },                {
+            "fqsen": "\\termTemplates\\NumericTemplate\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/termTemplates-NumericTemplate.html#method___construct"
+        },                {
+            "fqsen": "\\termTemplates\\NumericTemplate\u003A\u003A__toString\u0028\u0029",
+            "name": "__toString",
+            "summary": "",
+            "url": "classes/termTemplates-NumericTemplate.html#method___toString"
+        },                {
+            "fqsen": "\\termTemplates\\NumericTemplate\u003A\u003Aequals\u0028\u0029",
+            "name": "equals",
+            "summary": "",
+            "url": "classes/termTemplates-NumericTemplate.html#method_equals"
+        },                {
+            "fqsen": "\\termTemplates\\NumericTemplate\u003A\u003AEQUALS",
+            "name": "EQUALS",
+            "summary": "",
+            "url": "classes/termTemplates-NumericTemplate.html#constant_EQUALS"
+        },                {
+            "fqsen": "\\termTemplates\\NumericTemplate\u003A\u003AGREATER",
+            "name": "GREATER",
+            "summary": "",
+            "url": "classes/termTemplates-NumericTemplate.html#constant_GREATER"
+        },                {
+            "fqsen": "\\termTemplates\\NumericTemplate\u003A\u003ALOWER",
+            "name": "LOWER",
+            "summary": "",
+            "url": "classes/termTemplates-NumericTemplate.html#constant_LOWER"
+        },                {
+            "fqsen": "\\termTemplates\\NumericTemplate\u003A\u003AGREATER_EQUAL",
+            "name": "GREATER_EQUAL",
+            "summary": "",
+            "url": "classes/termTemplates-NumericTemplate.html#constant_GREATER_EQUAL"
+        },                {
+            "fqsen": "\\termTemplates\\NumericTemplate\u003A\u003ALOWER_EQUAL",
+            "name": "LOWER_EQUAL",
+            "summary": "",
+            "url": "classes/termTemplates-NumericTemplate.html#constant_LOWER_EQUAL"
+        },                {
+            "fqsen": "\\termTemplates\\NumericTemplate\u003A\u003AANY",
+            "name": "ANY",
+            "summary": "",
+            "url": "classes/termTemplates-NumericTemplate.html#constant_ANY"
+        },                {
+            "fqsen": "\\termTemplates\\NumericTemplate\u003A\u003A\u0024numericTypes",
+            "name": "numericTypes",
+            "summary": "",
+            "url": "classes/termTemplates-NumericTemplate.html#property_numericTypes"
+        },                {
+            "fqsen": "\\termTemplates\\NumericTemplate\u003A\u003A\u0024fn",
+            "name": "fn",
+            "summary": "",
+            "url": "classes/termTemplates-NumericTemplate.html#property_fn"
+        },                {
+            "fqsen": "\\termTemplates\\NumericTemplate\u003A\u003A\u0024value",
+            "name": "value",
+            "summary": "",
+            "url": "classes/termTemplates-NumericTemplate.html#property_value"
+        },                {
+            "fqsen": "\\termTemplates\\NumericTemplate\u003A\u003A\u0024matchMode",
+            "name": "matchMode",
+            "summary": "",
+            "url": "classes/termTemplates-NumericTemplate.html#property_matchMode"
+        },                {
+            "fqsen": "\\termTemplates\\NumericTemplate\u003A\u003A\u0024strict",
+            "name": "strict",
+            "summary": "",
+            "url": "classes/termTemplates-NumericTemplate.html#property_strict"
         },                {
             "fqsen": "\\termTemplates\\QuadTemplate",
             "name": "QuadTemplate",
@@ -95,6 +225,111 @@ Search.appendIndex(
             "name": "graph",
             "summary": "",
             "url": "classes/termTemplates-QuadTemplate.html#property_graph"
+        },                {
+            "fqsen": "\\termTemplates\\RegexTemplate",
+            "name": "RegexTemplate",
+            "summary": "",
+            "url": "classes/termTemplates-RegexTemplate.html"
+        },                {
+            "fqsen": "\\termTemplates\\RegexTemplate\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/termTemplates-RegexTemplate.html#method___construct"
+        },                {
+            "fqsen": "\\termTemplates\\RegexTemplate\u003A\u003A__toString\u0028\u0029",
+            "name": "__toString",
+            "summary": "",
+            "url": "classes/termTemplates-RegexTemplate.html#method___toString"
+        },                {
+            "fqsen": "\\termTemplates\\RegexTemplate\u003A\u003Aequals\u0028\u0029",
+            "name": "equals",
+            "summary": "",
+            "url": "classes/termTemplates-RegexTemplate.html#method_equals"
+        },                {
+            "fqsen": "\\termTemplates\\RegexTemplate\u003A\u003A\u0024regex",
+            "name": "regex",
+            "summary": "",
+            "url": "classes/termTemplates-RegexTemplate.html#property_regex"
+        },                {
+            "fqsen": "\\termTemplates\\ValueTemplate",
+            "name": "ValueTemplate",
+            "summary": "Description\u0020of\u0020AnyNamedNode",
+            "url": "classes/termTemplates-ValueTemplate.html"
+        },                {
+            "fqsen": "\\termTemplates\\ValueTemplate\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/termTemplates-ValueTemplate.html#method___construct"
+        },                {
+            "fqsen": "\\termTemplates\\ValueTemplate\u003A\u003A__toString\u0028\u0029",
+            "name": "__toString",
+            "summary": "",
+            "url": "classes/termTemplates-ValueTemplate.html#method___toString"
+        },                {
+            "fqsen": "\\termTemplates\\ValueTemplate\u003A\u003Aequals\u0028\u0029",
+            "name": "equals",
+            "summary": "",
+            "url": "classes/termTemplates-ValueTemplate.html#method_equals"
+        },                {
+            "fqsen": "\\termTemplates\\ValueTemplate\u003A\u003AEQUALS",
+            "name": "EQUALS",
+            "summary": "",
+            "url": "classes/termTemplates-ValueTemplate.html#constant_EQUALS"
+        },                {
+            "fqsen": "\\termTemplates\\ValueTemplate\u003A\u003ASTARTS",
+            "name": "STARTS",
+            "summary": "",
+            "url": "classes/termTemplates-ValueTemplate.html#constant_STARTS"
+        },                {
+            "fqsen": "\\termTemplates\\ValueTemplate\u003A\u003AENDS",
+            "name": "ENDS",
+            "summary": "",
+            "url": "classes/termTemplates-ValueTemplate.html#constant_ENDS"
+        },                {
+            "fqsen": "\\termTemplates\\ValueTemplate\u003A\u003ACONTAINS",
+            "name": "CONTAINS",
+            "summary": "",
+            "url": "classes/termTemplates-ValueTemplate.html#constant_CONTAINS"
+        },                {
+            "fqsen": "\\termTemplates\\ValueTemplate\u003A\u003AGREATER",
+            "name": "GREATER",
+            "summary": "",
+            "url": "classes/termTemplates-ValueTemplate.html#constant_GREATER"
+        },                {
+            "fqsen": "\\termTemplates\\ValueTemplate\u003A\u003ALOWER",
+            "name": "LOWER",
+            "summary": "",
+            "url": "classes/termTemplates-ValueTemplate.html#constant_LOWER"
+        },                {
+            "fqsen": "\\termTemplates\\ValueTemplate\u003A\u003AGREATER_EQUAL",
+            "name": "GREATER_EQUAL",
+            "summary": "",
+            "url": "classes/termTemplates-ValueTemplate.html#constant_GREATER_EQUAL"
+        },                {
+            "fqsen": "\\termTemplates\\ValueTemplate\u003A\u003ALOWER_EQUAL",
+            "name": "LOWER_EQUAL",
+            "summary": "",
+            "url": "classes/termTemplates-ValueTemplate.html#constant_LOWER_EQUAL"
+        },                {
+            "fqsen": "\\termTemplates\\ValueTemplate\u003A\u003AANY",
+            "name": "ANY",
+            "summary": "",
+            "url": "classes/termTemplates-ValueTemplate.html#constant_ANY"
+        },                {
+            "fqsen": "\\termTemplates\\ValueTemplate\u003A\u003A\u0024fn",
+            "name": "fn",
+            "summary": "",
+            "url": "classes/termTemplates-ValueTemplate.html#property_fn"
+        },                {
+            "fqsen": "\\termTemplates\\ValueTemplate\u003A\u003A\u0024value",
+            "name": "value",
+            "summary": "",
+            "url": "classes/termTemplates-ValueTemplate.html#property_value"
+        },                {
+            "fqsen": "\\termTemplates\\ValueTemplate\u003A\u003A\u0024matchMode",
+            "name": "matchMode",
+            "summary": "",
+            "url": "classes/termTemplates-ValueTemplate.html#property_matchMode"
         },                {
             "fqsen": "\\rdfInterface\\BlankNode",
             "name": "BlankNode",

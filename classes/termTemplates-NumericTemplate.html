@@ -83,23 +83,23 @@
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    LiteralTemplate
+    NumericTemplate
 
-        <span class="phpdocumentor-element__extends">
-        extends <a href="classes/termTemplates-ValueTemplate.html"><abbr title="\termTemplates\ValueTemplate">ValueTemplate</abbr></a>
-    </span>
     
     
+            <span class="phpdocumentor-element__implements">
+            implements
+                            <a href="classes/rdfInterface-TermCompare.html"><abbr title="\rdfInterface\TermCompare">TermCompare</abbr></a>                    </span>
     
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/LiteralTemplate.php"><a href="files/src-termtemplates-literaltemplate.html"><abbr title="src/termTemplates/LiteralTemplate.php">LiteralTemplate.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/NumericTemplate.php"><a href="files/src-termtemplates-numerictemplate.html"><abbr title="src/termTemplates/NumericTemplate.php">NumericTemplate.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">39</span>
 </aside>
 
-            <p class="phpdocumentor-summary">Description of LiteralTemplate</p>
+            <p class="phpdocumentor-summary">Description of AnyNamedNode</p>
 
     <section class="phpdocumentor-description"></section>
 
@@ -123,6 +123,17 @@
 
 
 
+<h3 id="interfaces_class_traits">
+    Interfaces, Classes and Traits
+    <a href="#interfaces_class_traits" class="headerlink"><i class="fas fa-link"></i></a>
+</h3>
+
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-TermCompare.html"><abbr title="\rdfInterface\TermCompare">TermCompare</abbr></a></dt>
+        <dd>Description of TermCompare</dd>
+    
+    
+    </dl>
 
 
 <h3 id="toc">
@@ -132,119 +143,98 @@
 
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/termTemplates-ValueTemplate.html#constant_ANY">ANY</a>
+    <a href="classes/termTemplates-NumericTemplate.html#constant_ANY">ANY</a>
     <span>
         &nbsp;= 8                    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/termTemplates-ValueTemplate.html#constant_CONTAINS">CONTAINS</a>
-    <span>
-        &nbsp;= 4                    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/termTemplates-ValueTemplate.html#constant_ENDS">ENDS</a>
-    <span>
-        &nbsp;= 3                    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/termTemplates-ValueTemplate.html#constant_EQUALS">EQUALS</a>
+    <a href="classes/termTemplates-NumericTemplate.html#constant_EQUALS">EQUALS</a>
     <span>
         &nbsp;= 1                    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/termTemplates-ValueTemplate.html#constant_GREATER">GREATER</a>
+    <a href="classes/termTemplates-NumericTemplate.html#constant_GREATER">GREATER</a>
     <span>
         &nbsp;= 5                    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/termTemplates-ValueTemplate.html#constant_GREATER_EQUAL">GREATER_EQUAL</a>
+    <a href="classes/termTemplates-NumericTemplate.html#constant_GREATER_EQUAL">GREATER_EQUAL</a>
     <span>
         &nbsp;= 6                    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/termTemplates-ValueTemplate.html#constant_LOWER">LOWER</a>
+    <a href="classes/termTemplates-NumericTemplate.html#constant_LOWER">LOWER</a>
     <span>
         &nbsp;= 6                    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/termTemplates-ValueTemplate.html#constant_LOWER_EQUAL">LOWER_EQUAL</a>
+    <a href="classes/termTemplates-NumericTemplate.html#constant_LOWER_EQUAL">LOWER_EQUAL</a>
     <span>
         &nbsp;= 7                    </span>
 </dt>
 <dd></dd>
 
-            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/termTemplates-ValueTemplate.html#constant_STARTS">STARTS</a>
-    <span>
-        &nbsp;= 2                    </span>
-</dt>
-<dd></dd>
-
-                <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/termTemplates-ValueTemplate.html#property_matchMode">$matchMode</a>
-    <span>
-                &nbsp;: string            </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/termTemplates-ValueTemplate.html#property_value">$value</a>
-    <span>
-                &nbsp;: string|null            </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/termTemplates-LiteralTemplate.html#property_datatype">$datatype</a>
-    <span>
-                &nbsp;: string|null            </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/termTemplates-ValueTemplate.html#property_fn">$fn</a>
+                <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/termTemplates-NumericTemplate.html#property_fn">$fn</a>
     <span>
                 &nbsp;: callable            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/termTemplates-LiteralTemplate.html#property_lang">$lang</a>
+    <a href="classes/termTemplates-NumericTemplate.html#property_matchMode">$matchMode</a>
     <span>
-                &nbsp;: string|null            </span>
+                &nbsp;: string            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/termTemplates-NumericTemplate.html#property_numericTypes">$numericTypes</a>
+    <span>
+                &nbsp;: array&lt;string|int, string&gt;            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/termTemplates-NumericTemplate.html#property_strict">$strict</a>
+    <span>
+                &nbsp;: bool            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/termTemplates-NumericTemplate.html#property_value">$value</a>
+    <span>
+                &nbsp;: float|null            </span>
 </dt>
 <dd></dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/termTemplates-LiteralTemplate.html#method___construct">__construct()</a>
+    <a href="classes/termTemplates-NumericTemplate.html#method___construct">__construct()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/termTemplates-LiteralTemplate.html#method___toString">__toString()</a>
+    <a href="classes/termTemplates-NumericTemplate.html#method___toString">__toString()</a>
     <span>
                         &nbsp;: string    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/termTemplates-LiteralTemplate.html#method_equals">equals()</a>
+    <a href="classes/termTemplates-NumericTemplate.html#method_equals">equals()</a>
     <span>
                         &nbsp;: bool    </span>
 </dt>
@@ -258,18 +248,18 @@
     <section class="phpdocumentor-constants">
         <h3 class="phpdocumentor-elements__header" id="constants">
             Constants
-            <a href="classes/termTemplates-LiteralTemplate.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/termTemplates-NumericTemplate.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_ANY">
         ANY
-        <a href="classes/termTemplates-ValueTemplate.html#constant_ANY" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/termTemplates-NumericTemplate.html#constant_ANY" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/ValueTemplate.php"><a href="files/src-termtemplates-valuetemplate.html"><abbr title="src/termTemplates/ValueTemplate.php">ValueTemplate.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/NumericTemplate.php"><a href="files/src-termtemplates-numerictemplate.html"><abbr title="src/termTemplates/NumericTemplate.php">NumericTemplate.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">47</span>
+    <span class="phpdocumentor-element-found-in__line">46</span>
 </aside>
 
     
@@ -286,65 +276,15 @@
 
 </article>
                     <article class="phpdocumentor-element -constant -public ">
-    <h4 class="phpdocumentor-element__name" id="constant_CONTAINS">
-        CONTAINS
-        <a href="classes/termTemplates-ValueTemplate.html#constant_CONTAINS" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/ValueTemplate.php"><a href="files/src-termtemplates-valuetemplate.html"><abbr title="src/termTemplates/ValueTemplate.php">ValueTemplate.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">42</span>
-</aside>
-
-    
-    <code class="phpdocumentor-signature phpdocumentor-code ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-    <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">CONTAINS</span>
-    = <span class="phpdocumentor-signature__default-value">4</span>
-</code>
-
-
-    
-    
-
-</article>
-                    <article class="phpdocumentor-element -constant -public ">
-    <h4 class="phpdocumentor-element__name" id="constant_ENDS">
-        ENDS
-        <a href="classes/termTemplates-ValueTemplate.html#constant_ENDS" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/ValueTemplate.php"><a href="files/src-termtemplates-valuetemplate.html"><abbr title="src/termTemplates/ValueTemplate.php">ValueTemplate.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">41</span>
-</aside>
-
-    
-    <code class="phpdocumentor-signature phpdocumentor-code ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-    <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">ENDS</span>
-    = <span class="phpdocumentor-signature__default-value">3</span>
-</code>
-
-
-    
-    
-
-</article>
-                    <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_EQUALS">
         EQUALS
-        <a href="classes/termTemplates-ValueTemplate.html#constant_EQUALS" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/termTemplates-NumericTemplate.html#constant_EQUALS" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/ValueTemplate.php"><a href="files/src-termtemplates-valuetemplate.html"><abbr title="src/termTemplates/ValueTemplate.php">ValueTemplate.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/NumericTemplate.php"><a href="files/src-termtemplates-numerictemplate.html"><abbr title="src/termTemplates/NumericTemplate.php">NumericTemplate.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">39</span>
+    <span class="phpdocumentor-element-found-in__line">41</span>
 </aside>
 
     
@@ -363,13 +303,13 @@
                     <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_GREATER">
         GREATER
-        <a href="classes/termTemplates-ValueTemplate.html#constant_GREATER" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/termTemplates-NumericTemplate.html#constant_GREATER" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/ValueTemplate.php"><a href="files/src-termtemplates-valuetemplate.html"><abbr title="src/termTemplates/ValueTemplate.php">ValueTemplate.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/NumericTemplate.php"><a href="files/src-termtemplates-numerictemplate.html"><abbr title="src/termTemplates/NumericTemplate.php">NumericTemplate.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">43</span>
+    <span class="phpdocumentor-element-found-in__line">42</span>
 </aside>
 
     
@@ -388,13 +328,13 @@
                     <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_GREATER_EQUAL">
         GREATER_EQUAL
-        <a href="classes/termTemplates-ValueTemplate.html#constant_GREATER_EQUAL" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/termTemplates-NumericTemplate.html#constant_GREATER_EQUAL" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/ValueTemplate.php"><a href="files/src-termtemplates-valuetemplate.html"><abbr title="src/termTemplates/ValueTemplate.php">ValueTemplate.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/NumericTemplate.php"><a href="files/src-termtemplates-numerictemplate.html"><abbr title="src/termTemplates/NumericTemplate.php">NumericTemplate.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">45</span>
+    <span class="phpdocumentor-element-found-in__line">44</span>
 </aside>
 
     
@@ -413,13 +353,13 @@
                     <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_LOWER">
         LOWER
-        <a href="classes/termTemplates-ValueTemplate.html#constant_LOWER" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/termTemplates-NumericTemplate.html#constant_LOWER" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/ValueTemplate.php"><a href="files/src-termtemplates-valuetemplate.html"><abbr title="src/termTemplates/ValueTemplate.php">ValueTemplate.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/NumericTemplate.php"><a href="files/src-termtemplates-numerictemplate.html"><abbr title="src/termTemplates/NumericTemplate.php">NumericTemplate.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">44</span>
+    <span class="phpdocumentor-element-found-in__line">43</span>
 </aside>
 
     
@@ -438,13 +378,13 @@
                     <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_LOWER_EQUAL">
         LOWER_EQUAL
-        <a href="classes/termTemplates-ValueTemplate.html#constant_LOWER_EQUAL" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/termTemplates-NumericTemplate.html#constant_LOWER_EQUAL" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/ValueTemplate.php"><a href="files/src-termtemplates-valuetemplate.html"><abbr title="src/termTemplates/ValueTemplate.php">ValueTemplate.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/NumericTemplate.php"><a href="files/src-termtemplates-numerictemplate.html"><abbr title="src/termTemplates/NumericTemplate.php">NumericTemplate.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">46</span>
+    <span class="phpdocumentor-element-found-in__line">45</span>
 </aside>
 
     
@@ -460,129 +400,14 @@
     
 
 </article>
-                    <article class="phpdocumentor-element -constant -public ">
-    <h4 class="phpdocumentor-element__name" id="constant_STARTS">
-        STARTS
-        <a href="classes/termTemplates-ValueTemplate.html#constant_STARTS" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/ValueTemplate.php"><a href="files/src-termtemplates-valuetemplate.html"><abbr title="src/termTemplates/ValueTemplate.php">ValueTemplate.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">40</span>
-</aside>
-
-    
-    <code class="phpdocumentor-signature phpdocumentor-code ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-    <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">STARTS</span>
-    = <span class="phpdocumentor-signature__default-value">2</span>
-</code>
-
-
-    
-    
-
-</article>
             </section>
 
         
     <section class="phpdocumentor-properties">
         <h3 class="phpdocumentor-elements__header" id="properties">
             Properties
-            <a href="classes/termTemplates-LiteralTemplate.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/termTemplates-NumericTemplate.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_matchMode">
-        $matchMode
-        <a href="classes/termTemplates-ValueTemplate.html#property_matchMode" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/ValueTemplate.php"><a href="files/src-termtemplates-valuetemplate.html"><abbr title="src/termTemplates/ValueTemplate.php">ValueTemplate.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">55</span>
-</aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">string</span>
-    <span class="phpdocumentor-signature__name">$matchMode</span>
-    </code>
-
-    
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_value">
-        $value
-        <a href="classes/termTemplates-ValueTemplate.html#property_value" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/ValueTemplate.php"><a href="files/src-termtemplates-valuetemplate.html"><abbr title="src/termTemplates/ValueTemplate.php">ValueTemplate.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">54</span>
-</aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">string|null</span>
-    <span class="phpdocumentor-signature__name">$value</span>
-    </code>
-
-    
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -private
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_datatype">
-        $datatype
-        <a href="classes/termTemplates-LiteralTemplate.html#property_datatype" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/LiteralTemplate.php"><a href="files/src-termtemplates-literaltemplate.html"><abbr title="src/termTemplates/LiteralTemplate.php">LiteralTemplate.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">41</span>
-</aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">string|null</span>
-    <span class="phpdocumentor-signature__name">$datatype</span>
-    </code>
-
-    
-    
-
-</article>
                     <article
         class="
             phpdocumentor-element
@@ -592,14 +417,14 @@
 >
     <h4 class="phpdocumentor-element__name" id="property_fn">
         $fn
-        <a href="classes/termTemplates-ValueTemplate.html#property_fn" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/termTemplates-NumericTemplate.html#property_fn" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/ValueTemplate.php"><a href="files/src-termtemplates-valuetemplate.html"><abbr title="src/termTemplates/ValueTemplate.php">ValueTemplate.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/NumericTemplate.php"><a href="files/src-termtemplates-numerictemplate.html"><abbr title="src/termTemplates/NumericTemplate.php">NumericTemplate.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">53</span>
+    <span class="phpdocumentor-element-found-in__line">78</span>
 </aside>
 
     
@@ -621,23 +446,114 @@
             -private
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_lang">
-        $lang
-        <a href="classes/termTemplates-LiteralTemplate.html#property_lang" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_matchMode">
+        $matchMode
+        <a href="classes/termTemplates-NumericTemplate.html#property_matchMode" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/LiteralTemplate.php"><a href="files/src-termtemplates-literaltemplate.html"><abbr title="src/termTemplates/LiteralTemplate.php">LiteralTemplate.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/NumericTemplate.php"><a href="files/src-termtemplates-numerictemplate.html"><abbr title="src/termTemplates/NumericTemplate.php">NumericTemplate.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">40</span>
+    <span class="phpdocumentor-element-found-in__line">80</span>
 </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">string|null</span>
-    <span class="phpdocumentor-signature__name">$lang</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$matchMode</span>
+    </code>
+
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+            -static                                            "
+>
+    <h4 class="phpdocumentor-element__name" id="property_numericTypes">
+        $numericTypes
+        <a href="classes/termTemplates-NumericTemplate.html#property_numericTypes" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/NumericTemplate.php"><a href="files/src-termtemplates-numerictemplate.html"><abbr title="src/termTemplates/NumericTemplate.php">NumericTemplate.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">52</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">array&lt;string|int, string&gt;</span>
+    <span class="phpdocumentor-signature__name">$numericTypes</span>
+     = <span class="phpdocumentor-signature__default-value">[zozlakRdfConstants::XSD_INTEGER, zozlakRdfConstants::XSD_DECIMAL, zozlakRdfConstants::XSD_BYTE, zozlakRdfConstants::XSD_SHORT, zozlakRdfConstants::XSD_INT, zozlakRdfConstants::XSD_LONG, zozlakRdfConstants::XSD_FLOAT, zozlakRdfConstants::XSD_DOUBLE, zozlakRdfConstants::XSD_G_DAY, zozlakRdfConstants::XSD_G_MONTH, zozlakRdfConstants::XSD_G_YEAR, zozlakRdfConstants::XSD_NEGATIVE_INTEGER, zozlakRdfConstants::XSD_NON_NEGATIVE_INTEGER, zozlakRdfConstants::XSD_NON_POSITIVE_INTEGER, zozlakRdfConstants::XSD_POSITIVE_INTEGER, zozlakRdfConstants::XSD_UNSIGNED_BYTE, zozlakRdfConstants::XSD_UNSIGNED_SHORT, zozlakRdfConstants::XSD_UNSIGNED_INT, zozlakRdfConstants::XSD_UNSIGNED_LONG]</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_strict">
+        $strict
+        <a href="classes/termTemplates-NumericTemplate.html#property_strict" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/NumericTemplate.php"><a href="files/src-termtemplates-numerictemplate.html"><abbr title="src/termTemplates/NumericTemplate.php">NumericTemplate.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">81</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">bool</span>
+    <span class="phpdocumentor-signature__name">$strict</span>
+    </code>
+
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_value">
+        $value
+        <a href="classes/termTemplates-NumericTemplate.html#property_value" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/NumericTemplate.php"><a href="files/src-termtemplates-numerictemplate.html"><abbr title="src/termTemplates/NumericTemplate.php">NumericTemplate.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">79</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">float|null</span>
+    <span class="phpdocumentor-signature__name">$value</span>
     </code>
 
     
@@ -649,7 +565,7 @@
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/termTemplates-LiteralTemplate.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/termTemplates-NumericTemplate.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="phpdocumentor-element
@@ -659,26 +575,26 @@
 >
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
-        <a href="classes/termTemplates-LiteralTemplate.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/termTemplates-NumericTemplate.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/LiteralTemplate.php"><a href="files/src-termtemplates-literaltemplate.html"><abbr title="src/termTemplates/LiteralTemplate.php">LiteralTemplate.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/NumericTemplate.php"><a href="files/src-termtemplates-numerictemplate.html"><abbr title="src/termTemplates/NumericTemplate.php">NumericTemplate.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">43</span>
+    <span class="phpdocumentor-element-found-in__line">83</span>
 </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$matchMode</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">self::EQUALS</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$lang</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$datatype</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">float|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$matchMode</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">self::EQUALS</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$strict</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$value</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+                : <span class="phpdocumentor-signature__argument__return-type">float|null</span>
+                            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
@@ -690,16 +606,9 @@
                 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$lang</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$datatype</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+                <span class="phpdocumentor-signature__argument__name">$strict</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">false</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
@@ -722,12 +631,12 @@
 >
     <h4 class="phpdocumentor-element__name" id="method___toString">
         __toString()
-        <a href="classes/termTemplates-LiteralTemplate.html#method___toString" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/termTemplates-NumericTemplate.html#method___toString" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/LiteralTemplate.php"><a href="files/src-termtemplates-literaltemplate.html"><abbr title="src/termTemplates/LiteralTemplate.php">LiteralTemplate.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/NumericTemplate.php"><a href="files/src-termtemplates-numerictemplate.html"><abbr title="src/termTemplates/NumericTemplate.php">NumericTemplate.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">52</span>
+    <span class="phpdocumentor-element-found-in__line">129</span>
 </aside>
 
     
@@ -754,12 +663,12 @@
 >
     <h4 class="phpdocumentor-element__name" id="method_equals">
         equals()
-        <a href="classes/termTemplates-LiteralTemplate.html#method_equals" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/termTemplates-NumericTemplate.html#method_equals" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/LiteralTemplate.php"><a href="files/src-termtemplates-literaltemplate.html"><abbr title="src/termTemplates/LiteralTemplate.php">LiteralTemplate.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/NumericTemplate.php"><a href="files/src-termtemplates-numerictemplate.html"><abbr title="src/termTemplates/NumericTemplate.php">NumericTemplate.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">56</span>
+    <span class="phpdocumentor-element-found-in__line">134</span>
 </aside>
 
     
@@ -804,7 +713,7 @@
 </section>
             </div>
         </div>
-        <a href="classes/termTemplates-LiteralTemplate.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/termTemplates-NumericTemplate.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 
