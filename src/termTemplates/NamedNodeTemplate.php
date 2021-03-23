@@ -27,39 +27,20 @@
 namespace termTemplates;
 
 use rdfInterface\Term as iTerm;
-use rdfInterface\TermCompare as iTermCompare;
-use rdfInterface\Literal as iLiteral;
+use rdfInterface\NamedNode as iNamedNode;
 
 /**
- * Description of LiteralTemplate
+ * Description of AnyNamedNode
  *
  * @author zozlak
  */
-class LiteralTemplate extends ValueTemplate {
-
-    private string | null $lang;
-    private string | null $datatype;
-
-    public function __construct(string | null $value = null,
-                                int $matchMode = self::EQUALS,
-                                string | null $lang = null,
-                                string | null $datatype = null) {
-        parent::__construct($value, $matchMode);
-        $this->lang     = $lang;
-        $this->datatype = $datatype;
-    }
+class NamedNodeTemplate extends ValueTemplate {
 
     public function __toString(): string {
-        return "[l $this->matchMode \"$this->value\"@$this->lang^^$this->datatype]";
+        return "[nn $this->matchMode $this->value]";
     }
 
     public function equals(iTerm $term): bool {
-        if ($term instanceof iLiteral) {
-            return parent::equals($term) &&
-                ($this->lang === null || $this->lang === '' && !empty($term->getLang()) || $this->lang === $term->getLang()) &&
-                ($this->datatype === null || $this->datatype === $term->getDatatype());
-        } else {
-            return false;
-        }
+        return $term instanceof iNamedNode && parent::equals($term);
     }
 }

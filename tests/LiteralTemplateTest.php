@@ -28,6 +28,7 @@ namespace termTemplates;
 
 use zozlak\RdfConstants as RDF;
 use simpleRdf\DataFactory as DF;
+use termTemplates\LiteralTemplate as LT;
 
 /**
  * Description of TermsTest
@@ -50,18 +51,18 @@ class LiteralTemplateTest extends \PHPUnit\Framework\TestCase {
         ];
 
         $lt = [
-            0 => ['qt' => new LiteralTemplate('1'), 'matches' => [0, 1, 2]],
-            1 => ['qt' => new LiteralTemplate(null, 'eng'), 'matches' => [1, 3]],
+            0 => ['qt' => new LT('1'), 'matches' => [0, 1, 2]],
+            1 => ['qt' => new LT(null, LT::ANY, 'eng'), 'matches' => [1, 3]],
             2 => [
-                'qt'      => new LiteralTemplate(null, null, RDF::XSD_INTEGER),
+                'qt'      => new LT(null, LT::ANY, null, RDF::XSD_INTEGER),
                 'matches' => [2]
             ],
-            3 => ['qt' => new LiteralTemplate('1', 'eng'), 'matches' => [1]],
+            3 => ['qt' => new LT('1', LT::EQUALS, 'eng'), 'matches' => [1]],
             4 => [
-                'qt'      => new LiteralTemplate((string) 1, null, RDF::XSD_INTEGER),
+                'qt'      => new LT((string) 1, LT::EQUALS, null, RDF::XSD_INTEGER),
                 'matches' => [2]
             ],
-            5 => ['qt' => new LiteralTemplate(null, ''), 'matches' => [1, 3]],
+            5 => ['qt' => new LT(null, LT::ANY, ''), 'matches' => [1, 3]],
         ];
         foreach ($lt as $n => $i) {
             foreach ($l as $m => $j) {

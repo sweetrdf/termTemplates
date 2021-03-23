@@ -35,22 +35,20 @@ use rdfInterface\Literal as iLiteral;
  *
  * @author zozlak
  */
-class LiteralTemplate extends ValueTemplate {
+class LiteralRegexTemplate extends RegexTemplate {
 
     private string | null $lang;
     private string | null $datatype;
 
-    public function __construct(string | null $value = null,
-                                int $matchMode = self::EQUALS,
-                                string | null $lang = null,
+    public function __construct(string $regex, string | null $lang = null,
                                 string | null $datatype = null) {
-        parent::__construct($value, $matchMode);
+        parent::__construct($regex);
         $this->lang     = $lang;
         $this->datatype = $datatype;
     }
 
     public function __toString(): string {
-        return "[l $this->matchMode \"$this->value\"@$this->lang^^$this->datatype]";
+        return "[l~ $this->regex @$this->lang^^$this->datatype]";
     }
 
     public function equals(iTerm $term): bool {
