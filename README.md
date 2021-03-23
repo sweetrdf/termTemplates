@@ -7,8 +7,6 @@
 
 Provides a set of term templates allowing match desired RDF named nodes, literals and quads.
 
-Summary of when to use which class is provided below (`termTemplates` namespace skipped for clarity):
-
 | Match by                     | Supported operators         | Match both named nodes and literals | Match only named nodes | Match only literals    | Remarks |
 |------------------------------|-----------------------------|-------------------------------------|------------------------|------------------------|---------|
 | term's string value          | ==, <, >, <=, >=, starts with, ends with, contains, any value | ValueTemplate | NamedNodeTemplate | LiteralTemplate [1] |     |
@@ -18,6 +16,8 @@ Summary of when to use which class is provided below (`termTemplates` namespace 
 [1] Supports filtering also by literal's lang (using *==* and *any* operators) and datatype (only using *==* operator).
 
 [2] Supports both strict and non-strict mode. In the strict mode comparison with literals with non-numeric datatype returns `false` no matter their value.
+
+Usage examples can be found [here](https://github.com/sweetrdf/rdfInterface/blob/master/EasyRdfReadme.md) (look for rdfInterface usage examples).
 
 ## Installation
 
