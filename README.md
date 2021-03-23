@@ -16,6 +16,7 @@ Summary of when to use which class is provided below (`termTemplates` namespace 
 | regex on term's string value | regex match                 | RegexTemplate                       | NamedNodeRegexTemplate | LiteralRegexTemplate   |         |
 
 [1] Supports filtering also by literal's lang (using *==* and *any* operators) and datatype (only using *==* operator).
+
 [2] Supports both strict and non-strict mode. In the strict mode comparison with literals with non-numeric datatype returns `false` no matter their value.
 
 ## Installation
