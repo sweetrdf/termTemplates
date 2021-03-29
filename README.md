@@ -17,6 +17,10 @@ Provides a set of term templates allowing match desired RDF named nodes, literal
 
 [2] Supports both strict and non-strict mode. In the strict mode comparison with literals with non-numeric datatype returns `false` no matter their value.
 
+Other templates include:
+
+* `termTemplate\AnyOfTemplate` - matches terms being equal to any of given array of `rdfInterface\TermCompare` objects.
+
 Usage examples can be found [here](https://github.com/sweetrdf/rdfInterface/blob/master/EasyRdfReadme.md) (look for rdfInterface usage examples).
 
 ## Installation
@@ -28,5 +32,5 @@ Usage examples can be found [here](https://github.com/sweetrdf/rdfInterface/blob
 
 https://sweetrdf.github.io/termTemplates/namespaces/termtemplates.html
 
-It's very incomplite but better than nothing.\
+It's very incomplete but better than nothing.\
 [RdfInterface](https://github.com/sweetrdf/rdfInterface/) documentation is included which explains the most important design decisions.
