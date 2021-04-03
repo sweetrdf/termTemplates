@@ -1,6 +1,31 @@
 Search.appendIndex(
     [
                 {
+            "fqsen": "\\termTemplates\\AnyOfTemplate",
+            "name": "AnyOfTemplate",
+            "summary": "Description\u0020of\u0020AnyOfTemplate",
+            "url": "classes/termTemplates-AnyOfTemplate.html"
+        },                {
+            "fqsen": "\\termTemplates\\AnyOfTemplate\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/termTemplates-AnyOfTemplate.html#method___construct"
+        },                {
+            "fqsen": "\\termTemplates\\AnyOfTemplate\u003A\u003A__toString\u0028\u0029",
+            "name": "__toString",
+            "summary": "",
+            "url": "classes/termTemplates-AnyOfTemplate.html#method___toString"
+        },                {
+            "fqsen": "\\termTemplates\\AnyOfTemplate\u003A\u003Aequals\u0028\u0029",
+            "name": "equals",
+            "summary": "",
+            "url": "classes/termTemplates-AnyOfTemplate.html#method_equals"
+        },                {
+            "fqsen": "\\termTemplates\\AnyOfTemplate\u003A\u003A\u0024terms",
+            "name": "terms",
+            "summary": "",
+            "url": "classes/termTemplates-AnyOfTemplate.html#property_terms"
+        },                {
             "fqsen": "\\termTemplates\\LiteralRegexTemplate",
             "name": "LiteralRegexTemplate",
             "summary": "Description\u0020of\u0020LiteralTemplate",
