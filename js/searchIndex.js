@@ -26,6 +26,126 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/termTemplates-AnyOfTemplate.html#property_terms"
         },                {
+            "fqsen": "\\termTemplates\\DatasetExtractors",
+            "name": "DatasetExtractors",
+            "summary": "Provides\u0020shorthand\u0020methods\u0020for\u0020extracting\u0020values\u0020from\u0020a\u0020Dataset\u0020without\na\u0020need\u0020to\u0020bother\u0020with\u0020iterators",
+            "url": "classes/termTemplates-DatasetExtractors.html"
+        },                {
+            "fqsen": "\\termTemplates\\DatasetExtractors\u003A\u003Afilter\u0028\u0029",
+            "name": "filter",
+            "summary": "",
+            "url": "classes/termTemplates-DatasetExtractors.html#method_filter"
+        },                {
+            "fqsen": "\\termTemplates\\DatasetExtractors\u003A\u003AgetValues\u0028\u0029",
+            "name": "getValues",
+            "summary": "",
+            "url": "classes/termTemplates-DatasetExtractors.html#method_getValues"
+        },                {
+            "fqsen": "\\termTemplates\\DatasetExtractors\u003A\u003AgetSubject\u0028\u0029",
+            "name": "getSubject",
+            "summary": "",
+            "url": "classes/termTemplates-DatasetExtractors.html#method_getSubject"
+        },                {
+            "fqsen": "\\termTemplates\\DatasetExtractors\u003A\u003AgetSubjectValue\u0028\u0029",
+            "name": "getSubjectValue",
+            "summary": "",
+            "url": "classes/termTemplates-DatasetExtractors.html#method_getSubjectValue"
+        },                {
+            "fqsen": "\\termTemplates\\DatasetExtractors\u003A\u003AgetSubjects\u0028\u0029",
+            "name": "getSubjects",
+            "summary": "",
+            "url": "classes/termTemplates-DatasetExtractors.html#method_getSubjects"
+        },                {
+            "fqsen": "\\termTemplates\\DatasetExtractors\u003A\u003AgetSubjectValues\u0028\u0029",
+            "name": "getSubjectValues",
+            "summary": "",
+            "url": "classes/termTemplates-DatasetExtractors.html#method_getSubjectValues"
+        },                {
+            "fqsen": "\\termTemplates\\DatasetExtractors\u003A\u003AgetPredicate\u0028\u0029",
+            "name": "getPredicate",
+            "summary": "",
+            "url": "classes/termTemplates-DatasetExtractors.html#method_getPredicate"
+        },                {
+            "fqsen": "\\termTemplates\\DatasetExtractors\u003A\u003AgetPredicateUri\u0028\u0029",
+            "name": "getPredicateUri",
+            "summary": "",
+            "url": "classes/termTemplates-DatasetExtractors.html#method_getPredicateUri"
+        },                {
+            "fqsen": "\\termTemplates\\DatasetExtractors\u003A\u003AgetPredicates\u0028\u0029",
+            "name": "getPredicates",
+            "summary": "",
+            "url": "classes/termTemplates-DatasetExtractors.html#method_getPredicates"
+        },                {
+            "fqsen": "\\termTemplates\\DatasetExtractors\u003A\u003AgetPredicateUris\u0028\u0029",
+            "name": "getPredicateUris",
+            "summary": "",
+            "url": "classes/termTemplates-DatasetExtractors.html#method_getPredicateUris"
+        },                {
+            "fqsen": "\\termTemplates\\DatasetExtractors\u003A\u003AgetObject\u0028\u0029",
+            "name": "getObject",
+            "summary": "",
+            "url": "classes/termTemplates-DatasetExtractors.html#method_getObject"
+        },                {
+            "fqsen": "\\termTemplates\\DatasetExtractors\u003A\u003AgetObjectValue\u0028\u0029",
+            "name": "getObjectValue",
+            "summary": "",
+            "url": "classes/termTemplates-DatasetExtractors.html#method_getObjectValue"
+        },                {
+            "fqsen": "\\termTemplates\\DatasetExtractors\u003A\u003AgetObjectLang\u0028\u0029",
+            "name": "getObjectLang",
+            "summary": "",
+            "url": "classes/termTemplates-DatasetExtractors.html#method_getObjectLang"
+        },                {
+            "fqsen": "\\termTemplates\\DatasetExtractors\u003A\u003AgetObjectDatatype\u0028\u0029",
+            "name": "getObjectDatatype",
+            "summary": "",
+            "url": "classes/termTemplates-DatasetExtractors.html#method_getObjectDatatype"
+        },                {
+            "fqsen": "\\termTemplates\\DatasetExtractors\u003A\u003AgetObjects\u0028\u0029",
+            "name": "getObjects",
+            "summary": "",
+            "url": "classes/termTemplates-DatasetExtractors.html#method_getObjects"
+        },                {
+            "fqsen": "\\termTemplates\\DatasetExtractors\u003A\u003AgetLiterals\u0028\u0029",
+            "name": "getLiterals",
+            "summary": "",
+            "url": "classes/termTemplates-DatasetExtractors.html#method_getLiterals"
+        },                {
+            "fqsen": "\\termTemplates\\DatasetExtractors\u003A\u003AgetLiteralValues\u0028\u0029",
+            "name": "getLiteralValues",
+            "summary": "",
+            "url": "classes/termTemplates-DatasetExtractors.html#method_getLiteralValues"
+        },                {
+            "fqsen": "\\termTemplates\\DatasetExtractors\u003A\u003AgetLiteralValuesByLang\u0028\u0029",
+            "name": "getLiteralValuesByLang",
+            "summary": "Returns\u0020an\u0020array\u0020of\u0020all\u0020object\u0020literal\u0020values\u0020with\u0020literals\u0027\u0020language\ntaken\u0020as\u0020an\u0020array\u0020keys\u0020and\u0020literals\u0027\u0020string\u0020value\u0020taken\u0020as\u0020values.",
+            "url": "classes/termTemplates-DatasetExtractors.html#method_getLiteralValuesByLang"
+        },                {
+            "fqsen": "\\termTemplates\\DatasetExtractors\u003A\u003AgetObjectValues\u0028\u0029",
+            "name": "getObjectValues",
+            "summary": "",
+            "url": "classes/termTemplates-DatasetExtractors.html#method_getObjectValues"
+        },                {
+            "fqsen": "\\termTemplates\\DatasetExtractors\u003A\u003AgetGraph\u0028\u0029",
+            "name": "getGraph",
+            "summary": "",
+            "url": "classes/termTemplates-DatasetExtractors.html#method_getGraph"
+        },                {
+            "fqsen": "\\termTemplates\\DatasetExtractors\u003A\u003AgetGraphUri\u0028\u0029",
+            "name": "getGraphUri",
+            "summary": "",
+            "url": "classes/termTemplates-DatasetExtractors.html#method_getGraphUri"
+        },                {
+            "fqsen": "\\termTemplates\\DatasetExtractors\u003A\u003AgetGraphs\u0028\u0029",
+            "name": "getGraphs",
+            "summary": "",
+            "url": "classes/termTemplates-DatasetExtractors.html#method_getGraphs"
+        },                {
+            "fqsen": "\\termTemplates\\DatasetExtractors\u003A\u003AgetGraphUris\u0028\u0029",
+            "name": "getGraphUris",
+            "summary": "",
+            "url": "classes/termTemplates-DatasetExtractors.html#method_getGraphUris"
+        },                {
             "fqsen": "\\termTemplates\\LiteralRegexTemplate",
             "name": "LiteralRegexTemplate",
             "summary": "Description\u0020of\u0020LiteralTemplate",
@@ -501,6 +621,31 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/rdfInterface-DatasetCompare.html#method_any"
         },                {
+            "fqsen": "\\rdfInterface\\DatasetListQuadParts",
+            "name": "DatasetListQuadParts",
+            "summary": "Set\u0020of\u0020methods\u0020for\u0020listing\u0020distinct\u0020Terms\u0020being\u0020used\u0020on\u0020a\u0020given\u0020position\nof\u0020dataset\u0020quads.",
+            "url": "classes/rdfInterface-DatasetListQuadParts.html"
+        },                {
+            "fqsen": "\\rdfInterface\\DatasetListQuadParts\u003A\u003AlistSubjects\u0028\u0029",
+            "name": "listSubjects",
+            "summary": "",
+            "url": "classes/rdfInterface-DatasetListQuadParts.html#method_listSubjects"
+        },                {
+            "fqsen": "\\rdfInterface\\DatasetListQuadParts\u003A\u003AlistPredicates\u0028\u0029",
+            "name": "listPredicates",
+            "summary": "",
+            "url": "classes/rdfInterface-DatasetListQuadParts.html#method_listPredicates"
+        },                {
+            "fqsen": "\\rdfInterface\\DatasetListQuadParts\u003A\u003AlistObjects\u0028\u0029",
+            "name": "listObjects",
+            "summary": "",
+            "url": "classes/rdfInterface-DatasetListQuadParts.html#method_listObjects"
+        },                {
+            "fqsen": "\\rdfInterface\\DatasetListQuadParts\u003A\u003AlistGraphs\u0028\u0029",
+            "name": "listGraphs",
+            "summary": "",
+            "url": "classes/rdfInterface-DatasetListQuadParts.html#method_listGraphs"
+        },                {
             "fqsen": "\\rdfInterface\\DatasetMapReduce",
             "name": "DatasetMapReduce",
             "summary": "Immutable\u0020edge\u0020processing\u0020methods",
@@ -785,6 +930,16 @@ Search.appendIndex(
             "name": "__toString",
             "summary": "",
             "url": "classes/rdfInterface-TermCompare.html#method___toString"
+        },                {
+            "fqsen": "\\rdfInterface\\TermIterator",
+            "name": "TermIterator",
+            "summary": "",
+            "url": "classes/rdfInterface-TermIterator.html"
+        },                {
+            "fqsen": "\\rdfInterface\\TermIterator\u003A\u003Acurrent\u0028\u0029",
+            "name": "current",
+            "summary": "",
+            "url": "classes/rdfInterface-TermIterator.html#method_current"
         },                {
             "fqsen": "\\",
             "name": "\\",
