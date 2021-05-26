@@ -68,19 +68,19 @@ class ValueTemplate implements iTermCompare {
             case self::STARTS:
                 $this->matchMode = 'startswith';
                 $this->fn        = function(iTerm $term) use($value): bool {
-                    return str_starts_with($term->getValue(), $value);
+                    return str_starts_with($term->getValue(), $value ?? '');
                 };
                 break;
             case self::ENDS:
                 $this->matchMode = 'endswith';
                 $this->fn        = function(iTerm $term) use($value): bool {
-                    return str_ends_with($term->getValue(), $value);
+                    return str_ends_with($term->getValue(), $value ?? '');
                 };
                 break;
             case self::CONTAINS:
                 $this->matchMode = 'contains';
                 $this->fn        = function(iTerm $term) use($value): bool {
-                    return str_contains($term->getValue(), $value);
+                    return str_contains($term->getValue(), $value ?? '');
                 };
                 break;
             case self::GREATER:
