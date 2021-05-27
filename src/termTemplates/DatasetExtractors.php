@@ -167,6 +167,22 @@ class DatasetExtractors {
         return iterator_to_array($dataset->listObjects($filter));
     }
 
+    static public function getLiteral(iDatasetListQuadParts $dataset,
+                                      iQuadCompare | iQuadIterator | callable $filter = null): ?iLiteral {
+        foreach (self::filter($dataset, $filter) as $quad) {
+            $object = $quad?->getObject();
+            if ($object instanceof iLiteral) {
+                return $object;
+            }
+        }
+        return null;
+    }
+
+    static public function getLiteralValue(iDatasetListQuadParts $dataset,
+                                           iQuadCompare | iQuadIterator | callable $filter = null): mixed {
+        return self::getLiteral($dataset, $filter)?->getValue();
+    }
+
     /**
      * 
      * @return array<iLiteral>
