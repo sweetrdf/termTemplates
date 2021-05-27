@@ -106,6 +106,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/termTemplates-DatasetExtractors.html#method_getObjects"
         },                {
+            "fqsen": "\\termTemplates\\DatasetExtractors\u003A\u003AgetLiteral\u0028\u0029",
+            "name": "getLiteral",
+            "summary": "",
+            "url": "classes/termTemplates-DatasetExtractors.html#method_getLiteral"
+        },                {
+            "fqsen": "\\termTemplates\\DatasetExtractors\u003A\u003AgetLiteralValue\u0028\u0029",
+            "name": "getLiteralValue",
+            "summary": "",
+            "url": "classes/termTemplates-DatasetExtractors.html#method_getLiteralValue"
+        },                {
             "fqsen": "\\termTemplates\\DatasetExtractors\u003A\u003AgetLiterals\u0028\u0029",
             "name": "getLiterals",
             "summary": "",

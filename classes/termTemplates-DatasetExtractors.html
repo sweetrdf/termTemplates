@@ -157,9 +157,23 @@ a need to bother with iterators</p>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/termTemplates-DatasetExtractors.html#method_getLiteral">getLiteral()</a>
+    <span>
+                        &nbsp;: <a href="classes/rdfInterface-Literal.html"><abbr title="\rdfInterface\Literal">Literal</abbr></a>|null    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/termTemplates-DatasetExtractors.html#method_getLiterals">getLiterals()</a>
     <span>
                         &nbsp;: array&lt;string|int, <a href="classes/rdfInterface-Literal.html"><abbr title="\rdfInterface\Literal">Literal</abbr></a>&gt;    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/termTemplates-DatasetExtractors.html#method_getLiteralValue">getLiteralValue()</a>
+    <span>
+                        &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
@@ -316,7 +330,7 @@ taken as an array keys and literals&#039; string value taken as values.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/DatasetExtractors.php"><a href="files/src-termtemplates-datasetextractors.html"><abbr title="src/termTemplates/DatasetExtractors.php">DatasetExtractors.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">233</span>
+    <span class="phpdocumentor-element-found-in__line">249</span>
 </aside>
 
     
@@ -367,7 +381,7 @@ taken as an array keys and literals&#039; string value taken as values.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/DatasetExtractors.php"><a href="files/src-termtemplates-datasetextractors.html"><abbr title="src/termTemplates/DatasetExtractors.php">DatasetExtractors.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">248</span>
+    <span class="phpdocumentor-element-found-in__line">264</span>
 </aside>
 
     
@@ -417,7 +431,7 @@ taken as an array keys and literals&#039; string value taken as values.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/DatasetExtractors.php"><a href="files/src-termtemplates-datasetextractors.html"><abbr title="src/termTemplates/DatasetExtractors.php">DatasetExtractors.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">239</span>
+    <span class="phpdocumentor-element-found-in__line">255</span>
 </aside>
 
     
@@ -468,7 +482,7 @@ taken as an array keys and literals&#039; string value taken as values.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/DatasetExtractors.php"><a href="files/src-termtemplates-datasetextractors.html"><abbr title="src/termTemplates/DatasetExtractors.php">DatasetExtractors.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">257</span>
+    <span class="phpdocumentor-element-found-in__line">273</span>
 </aside>
 
     
@@ -511,6 +525,57 @@ taken as an array keys and literals&#039; string value taken as values.</dd>
             -public
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_getLiteral">
+        getLiteral()
+        <a href="classes/termTemplates-DatasetExtractors.html#method_getLiteral" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/DatasetExtractors.php"><a href="files/src-termtemplates-datasetextractors.html"><abbr title="src/termTemplates/DatasetExtractors.php">DatasetExtractors.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">170</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">getLiteral</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-DatasetListQuadParts.html"><abbr title="\rdfInterface\DatasetListQuadParts">DatasetListQuadParts</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$dataset</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-QuadCompare.html"><abbr title="\rdfInterface\QuadCompare">QuadCompare</abbr></a>|<a href="classes/rdfInterface-QuadIterator.html"><abbr title="\rdfInterface\QuadIterator">QuadIterator</abbr></a>|callable&nbsp;</span><span class="phpdocumentor-signature__argument__name">$filter</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-Literal.html"><abbr title="\rdfInterface\Literal">Literal</abbr></a>|null</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$dataset</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-DatasetListQuadParts.html"><abbr title="\rdfInterface\DatasetListQuadParts">DatasetListQuadParts</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$filter</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-QuadCompare.html"><abbr title="\rdfInterface\QuadCompare">QuadCompare</abbr></a>|<a href="classes/rdfInterface-QuadIterator.html"><abbr title="\rdfInterface\QuadIterator">QuadIterator</abbr></a>|callable</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-Literal.html"><abbr title="\rdfInterface\Literal">Literal</abbr></a>|null</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_getLiterals">
         getLiterals()
         <a href="classes/termTemplates-DatasetExtractors.html#method_getLiterals" class="headerlink"><i class="fas fa-link"></i></a>
@@ -518,7 +583,7 @@ taken as an array keys and literals&#039; string value taken as values.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/DatasetExtractors.php"><a href="files/src-termtemplates-datasetextractors.html"><abbr title="src/termTemplates/DatasetExtractors.php">DatasetExtractors.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">174</span>
+    <span class="phpdocumentor-element-found-in__line">190</span>
 </aside>
 
     
@@ -561,6 +626,57 @@ taken as an array keys and literals&#039; string value taken as values.</dd>
             -public
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_getLiteralValue">
+        getLiteralValue()
+        <a href="classes/termTemplates-DatasetExtractors.html#method_getLiteralValue" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/DatasetExtractors.php"><a href="files/src-termtemplates-datasetextractors.html"><abbr title="src/termTemplates/DatasetExtractors.php">DatasetExtractors.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">181</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">getLiteralValue</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-DatasetListQuadParts.html"><abbr title="\rdfInterface\DatasetListQuadParts">DatasetListQuadParts</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$dataset</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-QuadCompare.html"><abbr title="\rdfInterface\QuadCompare">QuadCompare</abbr></a>|<a href="classes/rdfInterface-QuadIterator.html"><abbr title="\rdfInterface\QuadIterator">QuadIterator</abbr></a>|callable&nbsp;</span><span class="phpdocumentor-signature__argument__name">$filter</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$dataset</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-DatasetListQuadParts.html"><abbr title="\rdfInterface\DatasetListQuadParts">DatasetListQuadParts</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$filter</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-QuadCompare.html"><abbr title="\rdfInterface\QuadCompare">QuadCompare</abbr></a>|<a href="classes/rdfInterface-QuadIterator.html"><abbr title="\rdfInterface\QuadIterator">QuadIterator</abbr></a>|callable</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_getLiteralValues">
         getLiteralValues()
         <a href="classes/termTemplates-DatasetExtractors.html#method_getLiteralValues" class="headerlink"><i class="fas fa-link"></i></a>
@@ -568,7 +684,7 @@ taken as an array keys and literals&#039; string value taken as values.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/DatasetExtractors.php"><a href="files/src-termtemplates-datasetextractors.html"><abbr title="src/termTemplates/DatasetExtractors.php">DatasetExtractors.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">190</span>
+    <span class="phpdocumentor-element-found-in__line">206</span>
 </aside>
 
     
@@ -618,7 +734,7 @@ taken as an array keys and literals&#039; string value taken as values.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/DatasetExtractors.php"><a href="files/src-termtemplates-datasetextractors.html"><abbr title="src/termTemplates/DatasetExtractors.php">DatasetExtractors.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">212</span>
+    <span class="phpdocumentor-element-found-in__line">228</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns an array of all object literal values with literals&#039; language
@@ -928,7 +1044,7 @@ one is stored under the given language key.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/DatasetExtractors.php"><a href="files/src-termtemplates-datasetextractors.html"><abbr title="src/termTemplates/DatasetExtractors.php">DatasetExtractors.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">228</span>
+    <span class="phpdocumentor-element-found-in__line">244</span>
 </aside>
 
     
