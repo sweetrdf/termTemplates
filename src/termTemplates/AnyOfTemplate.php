@@ -26,9 +26,9 @@
 
 namespace termTemplates;
 
+use Traversable;
 use rdfInterface\Term as iTerm;
 use rdfInterface\TermCompare as iTermCompare;
-use rdfInterface\Dataset as iDataset;
 
 /**
  * Description of AnyOfTemplate
@@ -39,15 +39,15 @@ class AnyOfTemplate implements iTermCompare {
 
     /**
      * 
-     * @var array<iTerm>
+     * @var Traversable<iTerm>
      */
-    private array $terms;
+    private Traversable $terms;
 
     /**
      * 
-     * @param array<iTerm> $terms
+     * @param Traversable<iTerm> $terms
      */
-    public function __construct(array $terms) {
+    public function __construct(Traversable $terms) {
         $this->terms = $terms;
     }
 
