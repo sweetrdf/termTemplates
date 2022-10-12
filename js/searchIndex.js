@@ -246,6 +246,31 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/termTemplates-NamedNodeTemplate.html#method_equals"
         },                {
+            "fqsen": "\\termTemplates\\NotTemplate",
+            "name": "NotTemplate",
+            "summary": "Provides\u0020condition\u0020negation",
+            "url": "classes/termTemplates-NotTemplate.html"
+        },                {
+            "fqsen": "\\termTemplates\\NotTemplate\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/termTemplates-NotTemplate.html#method___construct"
+        },                {
+            "fqsen": "\\termTemplates\\NotTemplate\u003A\u003A__toString\u0028\u0029",
+            "name": "__toString",
+            "summary": "",
+            "url": "classes/termTemplates-NotTemplate.html#method___toString"
+        },                {
+            "fqsen": "\\termTemplates\\NotTemplate\u003A\u003Aequals\u0028\u0029",
+            "name": "equals",
+            "summary": "",
+            "url": "classes/termTemplates-NotTemplate.html#method_equals"
+        },                {
+            "fqsen": "\\termTemplates\\NotTemplate\u003A\u003A\u0024term",
+            "name": "term",
+            "summary": "",
+            "url": "classes/termTemplates-NotTemplate.html#property_term"
+        },                {
             "fqsen": "\\termTemplates\\NumericTemplate",
             "name": "NumericTemplate",
             "summary": "Description\u0020of\u0020AnyNamedNode",
