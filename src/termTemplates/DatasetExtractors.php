@@ -170,7 +170,7 @@ class DatasetExtractors {
     static public function getLiteral(iDatasetListQuadParts $dataset,
                                       iQuadCompare | iQuadIterator | callable $filter = null): ?iLiteral {
         foreach (self::filter($dataset, $filter) as $quad) {
-            $object = $quad?->getObject();
+            $object = $quad->getObject();
             if ($object instanceof iLiteral) {
                 return $object;
             }
@@ -191,7 +191,7 @@ class DatasetExtractors {
                                        iQuadCompare | iQuadIterator | callable $filter = null): array {
         $literals = [];
         foreach (self::filter($dataset, $filter) as $quad) {
-            $object = $quad?->getObject();
+            $object = $quad->getObject();
             if ($object instanceof iLiteral) {
                 $literals[] = $object;
             }
@@ -207,7 +207,7 @@ class DatasetExtractors {
                                             iQuadCompare | iQuadIterator | callable $filter = null): array {
         $values = [];
         foreach (self::filter($dataset, $filter) as $quad) {
-            $object = $quad?->getObject();
+            $object = $quad->getObject();
             if ($object instanceof iLiteral) {
                 $values[] = $object->getValue();
             }
@@ -229,7 +229,7 @@ class DatasetExtractors {
                                                   iQuadCompare | iQuadIterator | callable $filter = null): array {
         $values = [];
         foreach (self::filter($dataset, $filter) as $quad) {
-            $object = $quad?->getObject();
+            $object = $quad->getObject();
             if ($object instanceof iLiteral) {
                 $values[$object->getLang() ?? ''] = $object->getValue();
             }
