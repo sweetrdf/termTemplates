@@ -29,9 +29,9 @@ Usage examples can be found [here](https://github.com/sweetrdf/rdfInterface/blob
 
 ## Other classes
 
-* `termTemplate\NotTemplate` - negates the result of the `equals()` operation on a given `rdfInterface\TermCompare` object.
-* `termTemplate\AnyOfTemplate` - matches terms being equal to any of given list of `rdfInterface\TermCompare` objects.
-* `termTemplate\DatasetExtractors` - provides a set of static methods for extracting `rdfInterface\Dataset` quad elements
+* `termTemplates\NotTemplate` - negates the result of the `equals()` operation on a given `rdfInterface\TermCompare` object.
+* `termTemplates\AnyOfTemplate` - matches terms being equal to any of given list of `rdfInterface\TermCompare` objects.
+* `termTemplates\DatasetExtractors` - provides a set of static methods for extracting `rdfInterface\Dataset` quad elements
   as single `rdfInterface\Term`, single value, array of `rdfInterface\Term` or array of values.  
 
 ## Installation
