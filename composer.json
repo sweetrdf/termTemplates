@@ -27,11 +27,13 @@
         "phpunit/php-code-coverage": "^9.2",
         "phpstan/phpstan": "*",
         "squizlabs/php_codesniffer": "*",
-        "php-coveralls/php-coveralls": "^2.4"
+        "php-coveralls/php-coveralls": "^2.4",
+        "sweetrdf/simple-rdf": "dev-master"
     },
     "autoload-dev": {
         "psr-4": {
             "termTemplates\\": "tests"
         }
-    }
+    },
+    "minimum-stability": "dev"
 }

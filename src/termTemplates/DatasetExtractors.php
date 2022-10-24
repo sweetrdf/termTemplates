@@ -57,7 +57,7 @@ class DatasetExtractors {
      * @return array<mixed>
      */
     static private function getValues(iDataset $dataset,
-                                      iQuadCompare | iQuadIterator | callable $filter = null,
+                                      iQuadCompare | iQuadIterator | callable $filter,
                                       string $method): array {
         $dataset = self::filter($dataset, $filter);
         $values  = [];
