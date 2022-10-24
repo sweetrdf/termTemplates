@@ -27,9 +27,9 @@
 namespace termTemplates;
 
 use zozlak\RdfConstants as RDF;
-use rdfInterface\Term as iTerm;
-use rdfInterface\Literal as iLiteral;
-use rdfInterface\TermCompare as iTermCompare;
+use rdfInterface\TermInterface as iTerm;
+use rdfInterface\LiteralInterface as iLiteral;
+use rdfInterface\TermCompareInterface as iTermCompare;
 
 /**
  * Description of AnyNamedNode

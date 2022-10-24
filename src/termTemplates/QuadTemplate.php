@@ -26,11 +26,11 @@
 
 namespace termTemplates;
 
-use rdfInterface\Quad as iQuad;
-use rdfInterface\Term as iTerm;
-use rdfInterface\TermCompare as iTermCompare;
-use rdfInterface\QuadCompare as iQuadCompare;
-use rdfInterface\DefaultGraph as iDefaultGraph;
+use rdfInterface\QuadInterface as iQuad;
+use rdfInterface\TermInterface as iTerm;
+use rdfInterface\TermCompareInterface as iTermCompare;
+use rdfInterface\QuadCompareInterface as iQuadCompare;
+use rdfInterface\DefaultGraphInterface as iDefaultGraph;
 
 /**
  * Description of QuadTemplate

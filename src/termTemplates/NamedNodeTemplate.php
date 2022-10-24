@@ -26,8 +26,8 @@
 
 namespace termTemplates;
 
-use rdfInterface\Term as iTerm;
-use rdfInterface\NamedNode as iNamedNode;
+use rdfInterface\TermInterface as iTerm;
+use rdfInterface\NamedNodeInterface as iNamedNode;
 
 /**
  * Description of AnyNamedNode

@@ -26,9 +26,8 @@
 
 namespace termTemplates;
 
-use rdfInterface\Term as iTerm;
-use rdfInterface\TermCompare as iTermCompare;
-use rdfInterface\Literal as iLiteral;
+use rdfInterface\TermInterface as iTerm;
+use rdfInterface\LiteralInterface as iLiteral;
 
 /**
  * Description of LiteralTemplate

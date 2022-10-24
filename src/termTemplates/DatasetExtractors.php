@@ -26,15 +26,15 @@
 
 namespace termTemplates;
 
-use rdfInterface\BlankNode as iBlankNode;
-use rdfInterface\Dataset as iDataset;
-use rdfInterface\DatasetListQuadParts as iDatasetListQuadParts;
-use rdfInterface\DefaultGraph as iDefaultGraph;
-use rdfInterface\Literal as iLiteral;
-use rdfInterface\NamedNode as iNamedNode;
-use rdfInterface\QuadCompare as iQuadCompare;
-use rdfInterface\QuadIterator as iQuadIterator;
-use rdfInterface\Term as iTerm;
+use rdfInterface\BlankNodeInterface as iBlankNode;
+use rdfInterface\DatasetInterface as iDataset;
+use rdfInterface\DatasetListQuadPartsInterface as iDatasetListQuadParts;
+use rdfInterface\DefaultGraphInterface as iDefaultGraph;
+use rdfInterface\LiteralInterface as iLiteral;
+use rdfInterface\NamedNodeInterface as iNamedNode;
+use rdfInterface\QuadCompareInterface as iQuadCompare;
+use rdfInterface\QuadIteratorInterface as iQuadIterator;
+use rdfInterface\TermInterface as iTerm;
 
 /**
  * Provides shorthand methods for extracting values from a Dataset without

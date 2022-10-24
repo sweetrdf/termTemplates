@@ -26,8 +26,8 @@
 
 namespace termTemplates;
 
-use rdfInterface\Term as iTerm;
-use rdfInterface\TermCompare as iTermCompare;
+use rdfInterface\TermInterface as iTerm;
+use rdfInterface\TermCompareInterface as iTermCompare;
 
 /**
  * Description of AnyNamedNode
