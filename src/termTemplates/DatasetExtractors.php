@@ -45,13 +45,11 @@ use rdfInterface\TermInterface as iTerm;
 class DatasetExtractors {
 
     static private function filter(iDataset $dataset,
-                                   iQuadCompare | iQuadIterator | callable $filter = null): iDataset {
+                                   iQuadCompare | iQuadIterator | callable $filter = null): iQuadIterator {
         if ($filter !== null) {
-            return $dataset->copy($filter);
-        } else {
-            $dataset->rewind();
-            return $dataset;
+            $dataset = $dataset->copy($filter);
         }
+        return $dataset->getIterator();
     }
 
     /**

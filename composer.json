@@ -27,8 +27,7 @@
         "phpunit/php-code-coverage": "^9.2",
         "phpstan/phpstan": "*",
         "squizlabs/php_codesniffer": "*",
-        "php-coveralls/php-coveralls": "^2.4",
-        "sweetrdf/simple-rdf": "dev-master"
+        "php-coveralls/php-coveralls": "^2.4"
     },
     "autoload-dev": {
         "psr-4": {
