@@ -34,5 +34,6 @@
         "psr-4": {
             "termTemplates\\": "tests"
         }
-    }
+    },
+    "minimum-stability": "dev"
 }
