@@ -36,14 +36,7 @@ use rdfInterface\TermCompareInterface as iTermCompare;
  *
  * @author zozlak
  */
-class NumericTemplate implements iTermCompare {
-
-    const EQUALS        = 1;
-    const GREATER       = 5;
-    const LOWER         = 6;
-    const GREATER_EQUAL = 6;
-    const LOWER_EQUAL   = 7;
-    const ANY           = 8;
+class NumericTemplate extends ValueTemplate {
 
     /**
      * 
@@ -76,53 +69,53 @@ class NumericTemplate implements iTermCompare {
      * @var callable
      */
     private $fn;
-    private float | null $value;
-    private string $matchMode;
     private bool $strict;
 
-    public function __construct(?float $value, int $matchMode = self::EQUALS,
+    public function __construct(?float $value = null,
+                                string $matchMode = self::EQUALS,
                                 bool $strict = false) {
-        $value        = $matchMode === self::ANY ? null : $value;
-        $matchMode    = $value === null ? self::ANY : $matchMode;
-        $this->value  = $value;
-        $this->strict = $strict;
-        switch ($matchMode) {
+        $value           = $matchMode === self::ANY ? null : $value;
+        $this->matchMode = $value === null ? self::ANY : $matchMode;
+        $this->value     = $value;
+        $this->strict    = $strict;
+        switch ($this->matchMode) {
             case self::EQUALS:
-                $this->matchMode = '==';
-                $this->fn        = function(iTerm $term) use($value) {
-                    return (float) $term->getValue() === $value;
+                $this->fn = function (float $termValue) use ($value) {
+                    return $termValue === $value;
+                };
+                break;
+            case self::NOT_EQUALS:
+                $this->fn = function (float $termValue) use ($value) {
+                    return $termValue !== $value;
                 };
                 break;
             case self::GREATER:
-                $this->matchMode = '>';
-                $this->fn        = function(iTerm $term) use($value): bool {
-                    return $term->getValue() > $value;
+                $this->fn = function (float $termValue) use ($value): bool {
+                    return $termValue > $value;
                 };
                 break;
             case self::LOWER;
-                $this->matchMode = '<';
-                $this->fn        = function(iTerm $term) use($value): bool {
-                    return $term->getValue() < $value;
+                $this->fn = function (float $termValue) use ($value): bool {
+                    return $termValue < $value;
                 };
                 break;
             case self::GREATER_EQUAL:
-                $this->matchMode = '>=';
-                $this->fn        = function(iTerm $term) use($value): bool {
-                    return $term->getValue() >= $value;
+                $this->fn = function (float $termValue) use ($value): bool {
+                    return $termValue >= $value;
                 };
                 break;
             case self::LOWER_EQUAL:
-                $this->matchMode = '<=';
-                $this->fn        = function(iTerm $term) use($value): bool {
-                    return $term->getValue() <= $value;
+                $this->fn = function (float $termValue) use ($value): bool {
+                    return $termValue <= $value;
                 };
                 break;
             case self::ANY:
-                $this->matchMode = 'isnumeric';
-                $this->fn        = function(iTerm $term): bool {
-                    return is_numeric($term->getValue());
+                $this->fn = function (float $termValue): bool {
+                    return true;
                 };
                 break;
+            default:
+                throw new TermTemplatesException("Unknown match mode");
         }
     }
 
@@ -133,7 +126,7 @@ class NumericTemplate implements iTermCompare {
 
     public function equals(iTerm $term): bool {
         if ($term instanceof iLiteral) {
-            return ($this->fn)($term) &&
+            return is_numeric($term->getValue()) && ($this->fn)((float) $term->getValue()) &&
                 ($this->strict === false || in_array($term->getDatatype(), self::$numericTypes));
         } else {
             return false;

@@ -56,22 +56,32 @@ class QuadTemplateTest extends \PHPUnit\Framework\TestCase {
         ];
 
         $qt = [
-            0 => ['qt' => new QuadTemplate($nn1), 'matches' => [0, 1, 4]],
-            1 => ['qt' => new QuadTemplate(null, $nn2), 'matches' => [2, 3]],
-            2 => [
+            [
+                'qt'      => new QuadTemplate($nn1),
+                'matches' => [0, 1, 4]],
+            [
+                'qt'      => new QuadTemplate(null, $nn2),
+                'matches' => [2, 3]],
+            [
                 'qt'      => new QuadTemplate(null, null, $l1),
                 'matches' => [2]
             ],
-            3 => [
+            [
                 'qt'      => new QuadTemplate(null, null, null, $dg1),
                 'matches' => [0, 1, 2, 3, 4]
             ],
-            4 => [
+            [
                 'qt'      => new QuadTemplate(null, null, null, $nn2),
                 'matches' => [4]
             ],
-            5 => ['qt' => new QuadTemplate($bn, $nn2), 'matches' => [2, 3]],
-            6 => ['qt' => new QuadTemplate($nn2), 'matches' => []],
+            [
+                'qt'      => new QuadTemplate($bn, $nn2),
+                'matches' => [2, 3]
+            ],
+            [
+                'qt'      => new QuadTemplate($nn2),
+                'matches' => []
+            ],
         ];
         foreach ($qt as $n => $i) {
             foreach ($q as $m => $j) {

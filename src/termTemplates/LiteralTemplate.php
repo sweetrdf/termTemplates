@@ -40,7 +40,7 @@ class LiteralTemplate extends ValueTemplate {
     private string | null $datatype;
 
     public function __construct(string | null $value = null,
-                                int $matchMode = self::EQUALS,
+                                string $matchMode = self::EQUALS,
                                 string | null $lang = null,
                                 string | null $datatype = null) {
         parent::__construct($value, $matchMode);

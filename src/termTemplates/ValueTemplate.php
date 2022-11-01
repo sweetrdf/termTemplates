@@ -36,15 +36,17 @@ use rdfInterface\TermCompareInterface as iTermCompare;
  */
 class ValueTemplate implements iTermCompare {
 
-    const EQUALS        = 1;
-    const STARTS        = 2;
-    const ENDS          = 3;
-    const CONTAINS      = 4;
-    const GREATER       = 5;
-    const LOWER         = 6;
-    const GREATER_EQUAL = 6;
-    const LOWER_EQUAL   = 7;
-    const ANY           = 8;
+    const EQUALS        = '==';
+    const NOT_EQUALS    = '!=';
+    const STARTS        = 'starts';
+    const ENDS          = 'ends';
+    const CONTAINS      = 'contains';
+    const GREATER       = '>';
+    const LOWER         = '<';
+    const GREATER_EQUAL = '>=';
+    const LOWER_EQUAL   = '<=';
+    const ANY           = 'any';
+    const REGEX         = 'regex';
 
     /**
      * 
@@ -54,65 +56,69 @@ class ValueTemplate implements iTermCompare {
     protected string | null $value;
     protected string $matchMode;
 
-    public function __construct(?string $value, int $matchMode = self::EQUALS) {
-        $value       = $matchMode === self::ANY ? null : $value;
-        $matchMode   = $value === null ? self::ANY : $matchMode;
-        $this->value = $value;
-        switch ($matchMode) {
+    public function __construct(?string $value = null,
+                                string $matchMode = self::EQUALS) {
+        $value           = $matchMode === self::ANY ? null : $value;
+        $this->matchMode = $value === null ? self::ANY : $matchMode;
+        $this->value     = $value;
+        switch ($this->matchMode) {
             case self::EQUALS:
-                $this->matchMode = '==';
-                $this->fn        = function(iTerm $term) use($value) {
+                $this->fn = function (iTerm $term) use ($value) {
                     return $term->getValue() === $value;
                 };
                 break;
+            case self::NOT_EQUALS:
+                $this->fn = function (iTerm $term) use ($value) {
+                    return $term->getValue() !== $value;
+                };
+                break;
             case self::STARTS:
-                $this->matchMode = 'startswith';
-                $this->fn        = function(iTerm $term) use($value): bool {
+                $this->fn = function (iTerm $term) use ($value): bool {
                     return str_starts_with($term->getValue(), $value ?? '');
                 };
                 break;
             case self::ENDS:
-                $this->matchMode = 'endswith';
-                $this->fn        = function(iTerm $term) use($value): bool {
+                $this->fn = function (iTerm $term) use ($value): bool {
                     return str_ends_with($term->getValue(), $value ?? '');
                 };
                 break;
             case self::CONTAINS:
-                $this->matchMode = 'contains';
-                $this->fn        = function(iTerm $term) use($value): bool {
+                $this->fn = function (iTerm $term) use ($value): bool {
                     return str_contains($term->getValue(), $value ?? '');
                 };
                 break;
             case self::GREATER:
-                $this->matchMode = '>';
-                $this->fn        = function(iTerm $term) use($value): bool {
+                $this->fn = function (iTerm $term) use ($value): bool {
                     return $term->getValue() > $value;
                 };
                 break;
             case self::LOWER;
-                $this->matchMode = '<';
-                $this->fn        = function(iTerm $term) use($value): bool {
+                $this->fn = function (iTerm $term) use ($value): bool {
                     return $term->getValue() < $value;
                 };
                 break;
             case self::GREATER_EQUAL:
-                $this->matchMode = '>=';
-                $this->fn        = function(iTerm $term) use($value): bool {
+                $this->fn = function (iTerm $term) use ($value): bool {
                     return $term->getValue() >= $value;
                 };
                 break;
             case self::LOWER_EQUAL:
-                $this->matchMode = '<=';
-                $this->fn        = function(iTerm $term) use($value): bool {
+                $this->fn = function (iTerm $term) use ($value): bool {
                     return $term->getValue() <= $value;
                 };
                 break;
+            case self::REGEX:
+                $this->fn = function (iTerm $term) use ($value): bool {
+                    return preg_match($value, $term->getValue());
+                };
+                break;
             case self::ANY:
-                $this->matchMode = 'any';
-                $this->fn        = function(): bool {
+                $this->fn = function (): bool {
                     return true;
                 };
                 break;
+            default:
+                throw new TermTemplatesException("Unknown match mode");
         }
     }
 
