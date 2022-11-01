@@ -36,10 +36,6 @@ use simpleRdf\DataFactory as DF;
  */
 class QuadTemplateTest extends \PHPUnit\Framework\TestCase {
 
-    public function testToString(): void {
-        $this->assertIsString((string) new QuadTemplate(DF::namedNode('foo')));
-    }
-
     public function testEquals(): void {
         $bn  = DF::blankNode();
         $nn1 = DF::namedNode('foo');
@@ -89,8 +85,12 @@ class QuadTemplateTest extends \PHPUnit\Framework\TestCase {
                 $this->assertEquals($expected, $i['qt']->equals($j), "equals() between QuadTemplate $n and Quad $m failed");
             }
         }
-        
-        $this->assertEquals('[<foo>   ]', (string)(new QuadTemplate($nn1)));
+
+        $this->assertFalse((new QuadTemplate($nn1))->equals(DF::namedNode('foo')));
+    }
+
+    public function testToString(): void {
+        $this->assertEquals('[<foo> <bar> <baz> ]', (string) (new QuadTemplate(DF::namedNode('foo'), DF::namedNode('bar'), DF::namedNode('baz'))));
     }
 
     public function testGetters(): void {

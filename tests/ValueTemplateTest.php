@@ -86,6 +86,11 @@ class ValueTemplateTest extends \PHPUnit\Framework\TestCase {
             DF::literal('foo bar'),
         ];
 
+        // find all terms not equal 'foo bar'
+        $tmplt  = new ValueTemplate('foo bar', ValueTemplate::NOT_EQUALS);
+        $result = array_map(fn($x) => $tmplt->equals($x), $literals);
+        $this->assertEquals([true, true, false], $result);
+
         // find all terms containing 'ipsum'
         $tmplt  = new ValueTemplate('ipsum', ValueTemplate::CONTAINS);
         $result = array_map(fn($x) => $tmplt->equals($x), $literals);
@@ -96,6 +101,31 @@ class ValueTemplateTest extends \PHPUnit\Framework\TestCase {
         $tmplt  = new LiteralTemplate('ipsum', ValueTemplate::CONTAINS);
         $result = array_map(fn($x) => $tmplt->equals($x), $literals);
         $this->assertEquals([true, false, false], $result);
+
+        // find all terms starting with 'Lorem'
+        $tmplt  = new ValueTemplate('Lorem', ValueTemplate::STARTS);
+        $result = array_map(fn($x) => $tmplt->equals($x), $literals);
+        $this->assertEquals([true, false, false], $result);
+
+        // find all terms ending with 'amet'
+        $tmplt  = new ValueTemplate('amet', ValueTemplate::ENDS);
+        $result = array_map(fn($x) => $tmplt->equals($x), $literals);
+        $this->assertEquals([false, true, false], $result);
+
+        // find all terms with string value greater than 'foo bar'
+        $tmplt  = new ValueTemplate('foo bar', ValueTemplate::GREATER);
+        $result = array_map(fn($x) => $tmplt->equals($x), $literals);
+        $this->assertEquals([false, true, false], $result);
+
+        // find all terms with string value greater or equal than 'http'
+        $tmplt  = new ValueTemplate('http', ValueTemplate::GREATER_EQUAL);
+        $result = array_map(fn($x) => $tmplt->equals($x), $literals);
+        $this->assertEquals([false, true, false], $result);
+
+        // find all terms with string value lower or equal than 'foo bar'
+        $tmplt  = new ValueTemplate('foo bar', ValueTemplate::LOWER_EQUAL);
+        $result = array_map(fn($x) => $tmplt->equals($x), $literals);
+        $this->assertEquals([true, false, true], $result);
 
         // find all named nodes containing 'ipsum'
         $tmplt  = new NamedNodeTemplate('ipsum', ValueTemplate::CONTAINS);
@@ -120,6 +150,21 @@ class ValueTemplateTest extends \PHPUnit\Framework\TestCase {
         $this->assertEquals([true, false, true], $result);
     }
 
+    public function testWrongMatchMode(): void {
+        try {
+            new ValueTemplate('foo', 'bar');
+            $this->assertTrue(false);
+        } catch (TermTemplatesException $e) {
+            $this->assertEquals("Unknown match mode", $e->getMessage());
+        }
+        try {
+            new NumericTemplate(4, ValueTemplate::REGEX);
+            $this->assertTrue(false);
+        } catch (TermTemplatesException $e) {
+            $this->assertEquals("Unknown match mode", $e->getMessage());
+        }
+    }
+
     public function testNumericTemplate(): void {
         $literals = [
             DF::literal('2'),
@@ -140,10 +185,25 @@ class ValueTemplateTest extends \PHPUnit\Framework\TestCase {
         $result = array_map(fn($x) => $tmplt->equals($x), $literals);
         $this->assertEquals([false, false, false, true, false], $result);
 
-        // find terms with a value greate or equal than 3
+        // find terms with a value greater or equal than 3
         $tmplt  = new NumericTemplate(3, ValueTemplate::GREATER_EQUAL);
         $result = array_map(fn($x) => $tmplt->equals($x), $literals);
         $this->assertEquals([false, true, false, false, false], $result);
+
+        // find terms with a value greater or equal than 2
+        $tmplt  = new NumericTemplate(2, ValueTemplate::GREATER);
+        $result = array_map(fn($x) => $tmplt->equals($x), $literals);
+        $this->assertEquals([false, true, false, false, false], $result);
+
+        // find terms with a value lower or equal than 2
+        $tmplt  = new NumericTemplate(2, ValueTemplate::LOWER_EQUAL);
+        $result = array_map(fn($x) => $tmplt->equals($x), $literals);
+        $this->assertEquals([true, false, false, true, false], $result);
+
+        // find terms with a value lower than 3
+        $tmplt  = new NumericTemplate(3, ValueTemplate::LOWER);
+        $result = array_map(fn($x) => $tmplt->equals($x), $literals);
+        $this->assertEquals([true, false, false, true, false], $result);
 
         // find all terms with numeric values
         $tmplt  = new NumericTemplate(matchMode: ValueTemplate::ANY);
