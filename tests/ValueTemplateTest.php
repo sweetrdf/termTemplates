@@ -36,10 +36,6 @@ use simpleRdf\DataFactory as DF;
  */
 class ValueTemplateTest extends \PHPUnit\Framework\TestCase {
 
-    public function testLiteralTemplateToString(): void {
-        $this->assertIsString((string) new LiteralTemplate('foo'));
-    }
-
     public function testLiteralTemplateEquals(): void {
         $l = [
             0 => DF::literal('1'),
@@ -94,6 +90,7 @@ class ValueTemplateTest extends \PHPUnit\Framework\TestCase {
         $tmplt  = new ValueTemplate('ipsum', ValueTemplate::CONTAINS);
         $result = array_map(fn($x) => $tmplt->equals($x), $literals);
         $this->assertEquals([true, true, false], $result);
+        $this->assertEquals('[v contains ipsum]', (string) $tmplt);
 
         // find all literals containing 'ipsum'
         $tmplt  = new LiteralTemplate('ipsum', ValueTemplate::CONTAINS);
@@ -104,11 +101,13 @@ class ValueTemplateTest extends \PHPUnit\Framework\TestCase {
         $tmplt  = new NamedNodeTemplate('ipsum', ValueTemplate::CONTAINS);
         $result = array_map(fn($x) => $tmplt->equals($x), $literals);
         $this->assertEquals([false, true, false], $result);
+        $this->assertEquals('[nn contains ipsum]', (string) $tmplt);
 
         // find all literals in latin
         $tmplt  = new LiteralTemplate(lang: 'lat');
         $result = array_map(fn($x) => $tmplt->equals($x), $literals);
         $this->assertEquals([true, false, false], $result);
+        $this->assertEquals('[l any ""@lat^^]', (string) $tmplt);
 
         // find all terms with string value lower than 'http'
         $tmplt  = new LiteralTemplate('http', ValueTemplate::LOWER);
@@ -134,6 +133,7 @@ class ValueTemplateTest extends \PHPUnit\Framework\TestCase {
         $tmplt  = new NumericTemplate(2);
         $result = array_map(fn($x) => $tmplt->equals($x), $literals);
         $this->assertEquals([true, false, false, true, false], $result);
+        $this->assertEquals('[n == 2]', (string) $tmplt);
 
         // find terms with a value of 2 and enforce an RDF numeric type
         $tmplt  = new NumericTemplate(2, strict: true);
@@ -168,6 +168,7 @@ class ValueTemplateTest extends \PHPUnit\Framework\TestCase {
         $tmplt    = new NotTemplate(new NumericTemplate(2));
         $result   = array_map(fn($x) => $tmplt->equals($x), $literals);
         $this->assertEquals([false, true, true, false, true], $result);
+        $this->assertEquals('[not [n == 2]]', (string) $tmplt);
     }
 
     public function testAnyOfTemplate(): void {
@@ -185,5 +186,6 @@ class ValueTemplateTest extends \PHPUnit\Framework\TestCase {
         ]);
         $result = array_map(fn($x) => $tmplt->equals($x), $literals);
         $this->assertEquals([true, false, false, true, true], $result);
+        $this->assertEquals('[any {[n == 2], [nn any ]}]', (string) $tmplt);
     }
 }

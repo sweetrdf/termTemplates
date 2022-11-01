@@ -89,6 +89,8 @@ class QuadTemplateTest extends \PHPUnit\Framework\TestCase {
                 $this->assertEquals($expected, $i['qt']->equals($j), "equals() between QuadTemplate $n and Quad $m failed");
             }
         }
+        
+        $this->assertEquals('[<foo>   ]', (string)(new QuadTemplate($nn1)));
     }
 
     public function testGetters(): void {

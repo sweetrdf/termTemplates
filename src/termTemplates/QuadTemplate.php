@@ -55,7 +55,7 @@ class QuadTemplate implements iTermCompare, iQuadCompare {
     }
 
     public function __toString(): string {
-        return rtrim("$this->subject $this->predicate $this->object $this->graph");
+        return rtrim("[$this->subject $this->predicate $this->object $this->graph]");
     }
 
     public function equals(iTerm $quad): bool {
