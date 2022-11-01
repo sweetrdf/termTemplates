@@ -31,15 +31,15 @@ Search.appendIndex(
             "summary": "Provides\u0020shorthand\u0020methods\u0020for\u0020extracting\u0020values\u0020from\u0020a\u0020Dataset\u0020without\na\u0020need\u0020to\u0020bother\u0020with\u0020iterators",
             "url": "classes/termTemplates-DatasetExtractors.html"
         },                {
-            "fqsen": "\\termTemplates\\DatasetExtractors\u003A\u003Afilter\u0028\u0029",
-            "name": "filter",
-            "summary": "",
-            "url": "classes/termTemplates-DatasetExtractors.html#method_filter"
-        },                {
             "fqsen": "\\termTemplates\\DatasetExtractors\u003A\u003AgetValues\u0028\u0029",
             "name": "getValues",
             "summary": "",
             "url": "classes/termTemplates-DatasetExtractors.html#method_getValues"
+        },                {
+            "fqsen": "\\termTemplates\\DatasetExtractors\u003A\u003AgetSingle\u0028\u0029",
+            "name": "getSingle",
+            "summary": "",
+            "url": "classes/termTemplates-DatasetExtractors.html#method_getSingle"
         },                {
             "fqsen": "\\termTemplates\\DatasetExtractors\u003A\u003AgetSubject\u0028\u0029",
             "name": "getSubject",
@@ -156,36 +156,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/termTemplates-DatasetExtractors.html#method_getGraphUris"
         },                {
-            "fqsen": "\\termTemplates\\LiteralRegexTemplate",
-            "name": "LiteralRegexTemplate",
-            "summary": "Description\u0020of\u0020LiteralTemplate",
-            "url": "classes/termTemplates-LiteralRegexTemplate.html"
-        },                {
-            "fqsen": "\\termTemplates\\LiteralRegexTemplate\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/termTemplates-LiteralRegexTemplate.html#method___construct"
-        },                {
-            "fqsen": "\\termTemplates\\LiteralRegexTemplate\u003A\u003A__toString\u0028\u0029",
-            "name": "__toString",
-            "summary": "",
-            "url": "classes/termTemplates-LiteralRegexTemplate.html#method___toString"
-        },                {
-            "fqsen": "\\termTemplates\\LiteralRegexTemplate\u003A\u003Aequals\u0028\u0029",
-            "name": "equals",
-            "summary": "",
-            "url": "classes/termTemplates-LiteralRegexTemplate.html#method_equals"
-        },                {
-            "fqsen": "\\termTemplates\\LiteralRegexTemplate\u003A\u003A\u0024lang",
-            "name": "lang",
-            "summary": "",
-            "url": "classes/termTemplates-LiteralRegexTemplate.html#property_lang"
-        },                {
-            "fqsen": "\\termTemplates\\LiteralRegexTemplate\u003A\u003A\u0024datatype",
-            "name": "datatype",
-            "summary": "",
-            "url": "classes/termTemplates-LiteralRegexTemplate.html#property_datatype"
-        },                {
             "fqsen": "\\termTemplates\\LiteralTemplate",
             "name": "LiteralTemplate",
             "summary": "Description\u0020of\u0020LiteralTemplate",
@@ -215,21 +185,6 @@ Search.appendIndex(
             "name": "datatype",
             "summary": "",
             "url": "classes/termTemplates-LiteralTemplate.html#property_datatype"
-        },                {
-            "fqsen": "\\termTemplates\\NamedNodeRegexTemplate",
-            "name": "NamedNodeRegexTemplate",
-            "summary": "",
-            "url": "classes/termTemplates-NamedNodeRegexTemplate.html"
-        },                {
-            "fqsen": "\\termTemplates\\NamedNodeRegexTemplate\u003A\u003A__toString\u0028\u0029",
-            "name": "__toString",
-            "summary": "",
-            "url": "classes/termTemplates-NamedNodeRegexTemplate.html#method___toString"
-        },                {
-            "fqsen": "\\termTemplates\\NamedNodeRegexTemplate\u003A\u003Aequals\u0028\u0029",
-            "name": "equals",
-            "summary": "",
-            "url": "classes/termTemplates-NamedNodeRegexTemplate.html#method_equals"
         },                {
             "fqsen": "\\termTemplates\\NamedNodeTemplate",
             "name": "NamedNodeTemplate",
@@ -291,36 +246,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/termTemplates-NumericTemplate.html#method_equals"
         },                {
-            "fqsen": "\\termTemplates\\NumericTemplate\u003A\u003AEQUALS",
-            "name": "EQUALS",
-            "summary": "",
-            "url": "classes/termTemplates-NumericTemplate.html#constant_EQUALS"
-        },                {
-            "fqsen": "\\termTemplates\\NumericTemplate\u003A\u003AGREATER",
-            "name": "GREATER",
-            "summary": "",
-            "url": "classes/termTemplates-NumericTemplate.html#constant_GREATER"
-        },                {
-            "fqsen": "\\termTemplates\\NumericTemplate\u003A\u003ALOWER",
-            "name": "LOWER",
-            "summary": "",
-            "url": "classes/termTemplates-NumericTemplate.html#constant_LOWER"
-        },                {
-            "fqsen": "\\termTemplates\\NumericTemplate\u003A\u003AGREATER_EQUAL",
-            "name": "GREATER_EQUAL",
-            "summary": "",
-            "url": "classes/termTemplates-NumericTemplate.html#constant_GREATER_EQUAL"
-        },                {
-            "fqsen": "\\termTemplates\\NumericTemplate\u003A\u003ALOWER_EQUAL",
-            "name": "LOWER_EQUAL",
-            "summary": "",
-            "url": "classes/termTemplates-NumericTemplate.html#constant_LOWER_EQUAL"
-        },                {
-            "fqsen": "\\termTemplates\\NumericTemplate\u003A\u003AANY",
-            "name": "ANY",
-            "summary": "",
-            "url": "classes/termTemplates-NumericTemplate.html#constant_ANY"
-        },                {
             "fqsen": "\\termTemplates\\NumericTemplate\u003A\u003A\u0024numericTypes",
             "name": "numericTypes",
             "summary": "",
@@ -330,16 +255,6 @@ Search.appendIndex(
             "name": "fn",
             "summary": "",
             "url": "classes/termTemplates-NumericTemplate.html#property_fn"
-        },                {
-            "fqsen": "\\termTemplates\\NumericTemplate\u003A\u003A\u0024value",
-            "name": "value",
-            "summary": "",
-            "url": "classes/termTemplates-NumericTemplate.html#property_value"
-        },                {
-            "fqsen": "\\termTemplates\\NumericTemplate\u003A\u003A\u0024matchMode",
-            "name": "matchMode",
-            "summary": "",
-            "url": "classes/termTemplates-NumericTemplate.html#property_matchMode"
         },                {
             "fqsen": "\\termTemplates\\NumericTemplate\u003A\u003A\u0024strict",
             "name": "strict",
@@ -406,30 +321,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/termTemplates-QuadTemplate.html#property_graph"
         },                {
-            "fqsen": "\\termTemplates\\RegexTemplate",
-            "name": "RegexTemplate",
-            "summary": "",
-            "url": "classes/termTemplates-RegexTemplate.html"
-        },                {
-            "fqsen": "\\termTemplates\\RegexTemplate\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/termTemplates-RegexTemplate.html#method___construct"
-        },                {
-            "fqsen": "\\termTemplates\\RegexTemplate\u003A\u003A__toString\u0028\u0029",
-            "name": "__toString",
-            "summary": "",
-            "url": "classes/termTemplates-RegexTemplate.html#method___toString"
-        },                {
-            "fqsen": "\\termTemplates\\RegexTemplate\u003A\u003Aequals\u0028\u0029",
-            "name": "equals",
-            "summary": "",
-            "url": "classes/termTemplates-RegexTemplate.html#method_equals"
-        },                {
-            "fqsen": "\\termTemplates\\RegexTemplate\u003A\u003A\u0024regex",
-            "name": "regex",
-            "summary": "",
-            "url": "classes/termTemplates-RegexTemplate.html#property_regex"
+            "fqsen": "\\termTemplates\\TermTemplatesException",
+            "name": "TermTemplatesException",
+            "summary": "Description\u0020of\u0020TermTemplatesException",
+            "url": "classes/termTemplates-TermTemplatesException.html"
         },                {
             "fqsen": "\\termTemplates\\ValueTemplate",
             "name": "ValueTemplate",
@@ -455,6 +350,11 @@ Search.appendIndex(
             "name": "EQUALS",
             "summary": "",
             "url": "classes/termTemplates-ValueTemplate.html#constant_EQUALS"
+        },                {
+            "fqsen": "\\termTemplates\\ValueTemplate\u003A\u003ANOT_EQUALS",
+            "name": "NOT_EQUALS",
+            "summary": "",
+            "url": "classes/termTemplates-ValueTemplate.html#constant_NOT_EQUALS"
         },                {
             "fqsen": "\\termTemplates\\ValueTemplate\u003A\u003ASTARTS",
             "name": "STARTS",
@@ -495,6 +395,11 @@ Search.appendIndex(
             "name": "ANY",
             "summary": "",
             "url": "classes/termTemplates-ValueTemplate.html#constant_ANY"
+        },                {
+            "fqsen": "\\termTemplates\\ValueTemplate\u003A\u003AREGEX",
+            "name": "REGEX",
+            "summary": "",
+            "url": "classes/termTemplates-ValueTemplate.html#constant_REGEX"
         },                {
             "fqsen": "\\termTemplates\\ValueTemplate\u003A\u003A\u0024fn",
             "name": "fn",
