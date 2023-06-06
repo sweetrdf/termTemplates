@@ -15,7 +15,7 @@
     "require": {
         "php": ">=8.0",
         "zozlak/rdf-constants": "^1",
-        "sweetrdf/rdf-interface": "^1.0.0"
+        "sweetrdf/rdf-interface": "*"
     },
     "autoload": {
         "psr-4": {
@@ -28,11 +28,12 @@
         "phpstan/phpstan": "*",
         "squizlabs/php_codesniffer": "*",
         "php-coveralls/php-coveralls": "^2.4",
-        "sweetrdf/simple-rdf": "^1.0.0"
+        "sweetrdf/simple-rdf": "*"
     },
     "autoload-dev": {
         "psr-4": {
             "termTemplates\\": "tests"
         }
-    }
+    },
+    "minimum-stability": "dev"
 }
