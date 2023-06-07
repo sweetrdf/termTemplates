@@ -27,9 +27,8 @@
 namespace termTemplates;
 
 use zozlak\RdfConstants as RDF;
-use rdfInterface\TermInterface as iTerm;
-use rdfInterface\LiteralInterface as iLiteral;
-use rdfInterface\TermCompareInterface as iTermCompare;
+use rdfInterface\LiteralInterface;
+use rdfInterface\TermCompareInterface as TermCompareInterface;
 
 /**
  * Description of AnyNamedNode
@@ -70,13 +69,14 @@ class NumericTemplate extends ValueTemplate {
      */
     private $fn;
     private bool $strict;
+    protected float | null $fvalue;
 
-    public function __construct(?float $value = null,
+    public function __construct(float | null $value = null,
                                 string $matchMode = self::EQUALS,
                                 bool $strict = false) {
         $value           = $matchMode === self::ANY ? null : $value;
         $this->matchMode = $value === null ? self::ANY : $matchMode;
-        $this->value     = $value;
+        $this->fvalue     = $value;
         $this->strict    = $strict;
         switch ($this->matchMode) {
             case self::EQUALS:
@@ -121,11 +121,11 @@ class NumericTemplate extends ValueTemplate {
 
     public function __toString(): string {
         $strict = $this->strict ? 'strict ' : '';
-        return "[n $strict$this->matchMode $this->value]";
+        return "[n $strict$this->matchMode $this->fvalue]";
     }
 
-    public function equals(iTerm $term): bool {
-        if ($term instanceof iLiteral) {
+    public function equals(TermCompareInterface $term): bool {
+        if ($term instanceof LiteralInterface) {
             return is_numeric($term->getValue()) && ($this->fn)((float) $term->getValue()) &&
                 ($this->strict === false || in_array($term->getDatatype(), self::$numericTypes));
         } else {

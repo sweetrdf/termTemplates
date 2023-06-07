@@ -26,25 +26,24 @@
 
 namespace termTemplates;
 
-use rdfInterface\TermInterface as iTerm;
-use rdfInterface\TermCompareInterface as iTermCompare;
+use rdfInterface\TermCompareInterface;
 
 /**
  * Description of AnyOfTemplate
  *
  * @author zozlak
  */
-class AnyOfTemplate implements iTermCompare {
+class AnyOfTemplate implements TermCompareInterface {
 
     /**
      * 
-     * @var iterable<iTerm>
+     * @var iterable<TermCompareInterface>
      */
     private iterable $terms;
 
     /**
      * 
-     * @param iterable<iTerm> $terms
+     * @param iterable<TermCompareInterface> $terms
      */
     public function __construct(iterable $terms) {
         $this->terms = $terms;
@@ -59,7 +58,7 @@ class AnyOfTemplate implements iTermCompare {
         return $ret;
     }
 
-    public function equals(iTerm $term): bool {
+    public function equals(TermCompareInterface $term): bool {
         foreach ($this->terms as $i) {
             if ($i->equals($term)) {
                 return true;

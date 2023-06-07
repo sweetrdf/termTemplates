@@ -26,15 +26,15 @@
 
 namespace termTemplates;
 
-use rdfInterface\TermInterface as iTerm;
-use rdfInterface\TermCompareInterface as iTermCompare;
+use rdfInterface\TermInterface as TermInterface;
+use rdfInterface\TermCompareInterface as TermCompareInterface;
 
 /**
  * Description of AnyNamedNode
  *
  * @author zozlak
  */
-class ValueTemplate implements iTermCompare {
+class ValueTemplate implements TermCompareInterface {
 
     const EQUALS        = '==';
     const NOT_EQUALS    = '!=';
@@ -63,52 +63,52 @@ class ValueTemplate implements iTermCompare {
         $this->value     = $value;
         switch ($this->matchMode) {
             case self::EQUALS:
-                $this->fn = function (iTerm $term) use ($value) {
+                $this->fn = function (TermInterface $term) use ($value) {
                     return $term->getValue() === $value;
                 };
                 break;
             case self::NOT_EQUALS:
-                $this->fn = function (iTerm $term) use ($value) {
+                $this->fn = function (TermInterface $term) use ($value) {
                     return $term->getValue() !== $value;
                 };
                 break;
             case self::STARTS:
-                $this->fn = function (iTerm $term) use ($value): bool {
+                $this->fn = function (TermInterface $term) use ($value): bool {
                     return str_starts_with($term->getValue(), $value ?? '');
                 };
                 break;
             case self::ENDS:
-                $this->fn = function (iTerm $term) use ($value): bool {
+                $this->fn = function (TermInterface $term) use ($value): bool {
                     return str_ends_with($term->getValue(), $value ?? '');
                 };
                 break;
             case self::CONTAINS:
-                $this->fn = function (iTerm $term) use ($value): bool {
+                $this->fn = function (TermInterface $term) use ($value): bool {
                     return str_contains($term->getValue(), $value ?? '');
                 };
                 break;
             case self::GREATER:
-                $this->fn = function (iTerm $term) use ($value): bool {
+                $this->fn = function (TermInterface $term) use ($value): bool {
                     return $term->getValue() > $value;
                 };
                 break;
             case self::LOWER;
-                $this->fn = function (iTerm $term) use ($value): bool {
+                $this->fn = function (TermInterface $term) use ($value): bool {
                     return $term->getValue() < $value;
                 };
                 break;
             case self::GREATER_EQUAL:
-                $this->fn = function (iTerm $term) use ($value): bool {
+                $this->fn = function (TermInterface $term) use ($value): bool {
                     return $term->getValue() >= $value;
                 };
                 break;
             case self::LOWER_EQUAL:
-                $this->fn = function (iTerm $term) use ($value): bool {
+                $this->fn = function (TermInterface $term) use ($value): bool {
                     return $term->getValue() <= $value;
                 };
                 break;
             case self::REGEX:
-                $this->fn = function (iTerm $term) use ($value): bool {
+                $this->fn = function (TermInterface $term) use ($value): bool {
                     return preg_match($value, $term->getValue());
                 };
                 break;
@@ -126,7 +126,7 @@ class ValueTemplate implements iTermCompare {
         return "[v $this->matchMode $this->value]";
     }
 
-    public function equals(iTerm $term): bool {
+    public function equals(TermCompareInterface $term): bool {
         return ($this->fn)($term);
     }
 }

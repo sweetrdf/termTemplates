@@ -26,8 +26,8 @@
 
 namespace termTemplates;
 
-use rdfInterface\TermInterface as iTerm;
-use rdfInterface\NamedNodeInterface as iNamedNode;
+use rdfInterface\TermCompareInterface;
+use rdfInterface\NamedNodeInterface;
 
 /**
  * Description of AnyNamedNode
@@ -40,7 +40,7 @@ class NamedNodeTemplate extends ValueTemplate {
         return "[nn $this->matchMode $this->value]";
     }
 
-    public function equals(iTerm $term): bool {
-        return $term instanceof iNamedNode && parent::equals($term);
+    public function equals(TermCompareInterface $term): bool {
+        return $term instanceof NamedNodeInterface && parent::equals($term);
     }
 }

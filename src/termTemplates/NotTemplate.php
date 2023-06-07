@@ -26,19 +26,18 @@
 
 namespace termTemplates;
 
-use rdfInterface\TermInterface as iTerm;
-use rdfInterface\TermCompareInterface as iTermCompare;
+use rdfInterface\TermCompareInterface;
 
 /**
  * Provides condition negation 
  *
  * @author zozlak
  */
-class NotTemplate implements iTermCompare {
+class NotTemplate implements TermCompareInterface {
 
-    private iTermCompare $term;
+    private TermCompareInterface $term;
 
-    public function __construct(iTermCompare $term) {
+    public function __construct(TermCompareInterface $term) {
         $this->term = $term;
     }
 
@@ -46,7 +45,7 @@ class NotTemplate implements iTermCompare {
         return '[not ' . $this->term . ']';
     }
 
-    public function equals(iTerm $term): bool {
+    public function equals(TermCompareInterface $term): bool {
         return !$this->term->equals($term);
     }
 }

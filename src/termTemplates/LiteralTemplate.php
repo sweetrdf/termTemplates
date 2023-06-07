@@ -26,8 +26,8 @@
 
 namespace termTemplates;
 
-use rdfInterface\TermInterface as iTerm;
-use rdfInterface\LiteralInterface as iLiteral;
+use rdfInterface\TermCompareInterface;
+use rdfInterface\LiteralInterface;
 
 /**
  * Description of LiteralTemplate
@@ -52,8 +52,8 @@ class LiteralTemplate extends ValueTemplate {
         return "[l $this->matchMode \"$this->value\"@$this->lang^^$this->datatype]";
     }
 
-    public function equals(iTerm $term): bool {
-        if ($term instanceof iLiteral) {
+    public function equals(TermCompareInterface $term): bool {
+        if ($term instanceof LiteralInterface) {
             return parent::equals($term) &&
                 ($this->lang === null || $this->lang === '' && !empty($term->getLang()) || $this->lang === $term->getLang()) &&
                 ($this->datatype === null || $this->datatype === $term->getDatatype());

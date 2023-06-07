@@ -26,28 +26,28 @@
 
 namespace termTemplates;
 
-use rdfInterface\QuadInterface as iQuad;
-use rdfInterface\TermInterface as iTerm;
-use rdfInterface\TermCompareInterface as iTermCompare;
-use rdfInterface\QuadCompareInterface as iQuadCompare;
-use rdfInterface\DefaultGraphInterface as iDefaultGraph;
+use rdfInterface\QuadInterface;
+use rdfInterface\TermInterface;
+use rdfInterface\TermCompareInterface;
+use rdfInterface\QuadCompareInterface;
+use rdfInterface\DefaultGraphInterface;
 
 /**
  * Description of QuadTemplate
  *
  * @author zozlak
  */
-class QuadTemplate implements iTermCompare, iQuadCompare {
+class QuadTemplate implements TermCompareInterface, QuadCompareInterface {
 
-    public iTermCompare | iTerm | null $subject;
-    public iTermCompare | iTerm | null $predicate;
-    public iTermCompare | iTerm | null $object;
-    public iTermCompare | iTerm | null $graph;
+    public TermCompareInterface | TermInterface | null $subject;
+    public TermCompareInterface | TermInterface | null $predicate;
+    public TermCompareInterface | TermInterface | null $object;
+    public TermCompareInterface | TermInterface | null $graph;
 
-    public function __construct(iTermCompare | iTerm | null $subject = null,
-                                iTermCompare | iTerm | null $predicate = null,
-                                iTermCompare | iTerm | null $object = null,
-                                iTermCompare | iTerm | null $graph = null) {
+    public function __construct(TermCompareInterface | TermInterface | null $subject = null,
+                                TermCompareInterface | TermInterface | null $predicate = null,
+                                TermCompareInterface | TermInterface | null $object = null,
+                                TermCompareInterface | TermInterface | null $graph = null) {
         $this->subject   = $subject;
         $this->predicate = $predicate;
         $this->object    = $object;
@@ -58,30 +58,30 @@ class QuadTemplate implements iTermCompare, iQuadCompare {
         return rtrim("[$this->subject $this->predicate $this->object $this->graph]");
     }
 
-    public function equals(iTerm $quad): bool {
-        if ($quad instanceof iQuad) {
+    public function equals(TermCompareInterface $quad): bool {
+        if ($quad instanceof QuadInterface) {
             return ($this->subject === null || $this->subject->equals($quad->getSubject())) &&
                 ($this->predicate === null || $this->predicate->equals($quad->getPredicate())) &&
                 ($this->object === null || $this->object->equals($quad->getObject())) &&
-                ($this->graph === null || $this->graph instanceof iDefaultGraph || $this->graph->equals($quad->getGraph()));
+                ($this->graph === null || $this->graph instanceof DefaultGraphInterface || $this->graph->equals($quad->getGraph()));
         } else {
             return false;
         }
     }
 
-    public function getSubject(): iTerm | iTermCompare | null {
+    public function getSubject(): TermCompareInterface | null {
         return $this->subject;
     }
 
-    public function getPredicate(): iTerm | iTermCompare | null {
+    public function getPredicate(): TermCompareInterface | null {
         return $this->predicate;
     }
 
-    public function getObject(): iTerm | iTermCompare | null {
+    public function getObject(): TermCompareInterface | null {
         return $this->object;
     }
 
-    public function getGraph(): iTerm | iTermCompare | null {
+    public function getGraph(): TermCompareInterface | null {
         return $this->graph;
     }
 }
