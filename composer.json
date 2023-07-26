@@ -28,7 +28,7 @@
         "phpstan/phpstan": "*",
         "squizlabs/php_codesniffer": "*",
         "php-coveralls/php-coveralls": "^2.4",
-        "sweetrdf/simple-rdf": "*"
+        "sweetrdf/simple-rdf": "^2.0.0-RC1"
     },
     "autoload-dev": {
         "psr-4": {
