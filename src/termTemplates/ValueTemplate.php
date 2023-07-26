@@ -74,17 +74,17 @@ class ValueTemplate implements TermCompareInterface {
                 break;
             case self::STARTS:
                 $this->fn = function (TermInterface $term) use ($value): bool {
-                    return str_starts_with($term->getValue(), $value ?? '');
+                    return str_starts_with((string) $term->getValue(), $value ?? '');
                 };
                 break;
             case self::ENDS:
                 $this->fn = function (TermInterface $term) use ($value): bool {
-                    return str_ends_with($term->getValue(), $value ?? '');
+                    return str_ends_with((string) $term->getValue(), $value ?? '');
                 };
                 break;
             case self::CONTAINS:
                 $this->fn = function (TermInterface $term) use ($value): bool {
-                    return str_contains($term->getValue(), $value ?? '');
+                    return str_contains((string) $term->getValue(), $value ?? '');
                 };
                 break;
             case self::GREATER:
@@ -109,7 +109,7 @@ class ValueTemplate implements TermCompareInterface {
                 break;
             case self::REGEX:
                 $this->fn = function (TermInterface $term) use ($value): bool {
-                    return preg_match($value, $term->getValue());
+                    return (bool) preg_match((string) $value, (string) $term->getValue());
                 };
                 break;
             case self::ANY:

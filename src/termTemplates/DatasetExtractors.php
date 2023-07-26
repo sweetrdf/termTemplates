@@ -26,17 +26,15 @@
 
 namespace termTemplates;
 
-use Exception;
-use rdfInterface\BlankNodeInterface as iBlankNode;
-use rdfInterface\DatasetInterface as iDataset;
-use rdfInterface\DatasetListQuadPartsInterface as iDatasetListQuadParts;
-use rdfInterface\DefaultGraphInterface as iDefaultGraph;
-use rdfInterface\LiteralInterface as iLiteral;
-use rdfInterface\NamedNodeInterface as iNamedNode;
-use rdfInterface\QuadCompareInterface as iQuadCompare;
-use rdfInterface\QuadIteratorInterface as iQuadIterator;
-use rdfInterface\TermInterface as iTerm;
-use rdfInterface\QuadInterface as iQuad;
+use rdfInterface\BlankNodeInterface;
+use rdfInterface\DatasetInterface;
+use rdfInterface\DefaultGraphInterface;
+use rdfInterface\LiteralInterface;
+use rdfInterface\NamedNodeInterface;
+use rdfInterface\QuadCompareInterface;
+use rdfInterface\QuadIteratorInterface;
+use rdfInterface\TermInterface;
+use rdfInterface\QuadInterface;
 
 /**
  * Provides shorthand methods for extracting values from a Dataset without
@@ -50,8 +48,8 @@ class DatasetExtractors {
      * 
      * @return array<mixed>
      */
-    static private function getValues(iDataset $dataset,
-                                      iQuadCompare | iQuadIterator | callable | null $filter,
+    static private function getValues(DatasetInterface $dataset,
+                                      QuadCompareInterface | QuadIteratorInterface | callable | null $filter,
                                       string $method): array {
         $values = [];
         foreach ($dataset->getIterator($filter) as $quad) {
@@ -60,28 +58,28 @@ class DatasetExtractors {
         return $values;
     }
 
-    static private function getSingle(iDataset $dataset,
-                                      iQuadCompare | iQuadIterator | callable $filter = null): ?iQuad {
+    static private function getSingle(DatasetInterface $dataset,
+                                      QuadCompareInterface | QuadIteratorInterface | callable $filter = null): ?QuadInterface {
         $iterator = $dataset->getIterator($filter);
         return $iterator->valid() ? $iterator->current() : null;
     }
 
-    static public function getSubject(iDataset $dataset,
-                                      iQuadCompare | iQuadIterator | callable $filter = null): ?iTerm {
+    static public function getSubject(DatasetInterface $dataset,
+                                      QuadCompareInterface | QuadIteratorInterface | callable $filter = null): ?TermInterface {
         return self::getSingle($dataset, $filter)?->getSubject();
     }
 
-    static public function getSubjectValue(iDataset $dataset,
-                                           iQuadCompare | iQuadIterator | callable $filter = null): mixed {
+    static public function getSubjectValue(DatasetInterface $dataset,
+                                           QuadCompareInterface | QuadIteratorInterface | callable $filter = null): mixed {
         return self::getSubject($dataset, $filter)?->getValue();
     }
 
     /**
      * 
-     * @return array<iTerm>
+     * @return array<TermInterface>
      */
-    static public function getSubjects(iDatasetListQuadParts $dataset,
-                                       iQuadCompare | iQuadIterator | callable $filter = null): array {
+    static public function getSubjects(DatasetInterface $dataset,
+                                       QuadCompareInterface | QuadIteratorInterface | callable $filter = null): array {
         return iterator_to_array($dataset->listSubjects($filter));
     }
 
@@ -89,27 +87,27 @@ class DatasetExtractors {
      * 
      * @return array<mixed>
      */
-    static public function getSubjectValues(iDatasetListQuadParts $dataset,
-                                            iQuadCompare | iQuadIterator | callable $filter = null): array {
+    static public function getSubjectValues(DatasetInterface $dataset,
+                                            QuadCompareInterface | QuadIteratorInterface | callable $filter = null): array {
         return self::getValues($dataset, $filter, 'getSubject');
     }
 
-    static public function getPredicate(iDataset $dataset,
-                                        iQuadCompare | iQuadIterator | callable $filter = null): ?iNamedNode {
+    static public function getPredicate(DatasetInterface $dataset,
+                                        QuadCompareInterface | QuadIteratorInterface | callable $filter = null): ?NamedNodeInterface {
         return self::getSingle($dataset, $filter)?->getPredicate();
     }
 
-    static public function getPredicateUri(iDataset $dataset,
-                                           iQuadCompare | iQuadIterator | callable $filter = null): ?string {
+    static public function getPredicateUri(DatasetInterface $dataset,
+                                           QuadCompareInterface | QuadIteratorInterface | callable $filter = null): ?string {
         return self::getPredicate($dataset, $filter)?->getValue();
     }
 
     /**
      * 
-     * @return array<iNamedNode>
+     * @return array<NamedNodeInterface>
      */
-    static public function getPredicates(iDatasetListQuadParts $dataset,
-                                         iQuadCompare | iQuadIterator | callable $filter = null): array {
+    static public function getPredicates(DatasetInterface $dataset,
+                                         QuadCompareInterface | QuadIteratorInterface | callable $filter = null): array {
         return iterator_to_array($dataset->listPredicates($filter));
     }
 
@@ -117,23 +115,23 @@ class DatasetExtractors {
      * 
      * @return array<string>
      */
-    static public function getPredicateUris(iDatasetListQuadParts $dataset,
-                                            iQuadCompare | iQuadIterator | callable $filter = null): array {
+    static public function getPredicateUris(DatasetInterface $dataset,
+                                            QuadCompareInterface | QuadIteratorInterface | callable $filter = null): array {
         return self::getValues($dataset, $filter, 'getPredicate');
     }
 
-    static public function getObject(iDataset $dataset,
-                                     iQuadCompare | iQuadIterator | callable $filter = null): ?iTerm {
+    static public function getObject(DatasetInterface $dataset,
+                                     QuadCompareInterface | QuadIteratorInterface | callable $filter = null): ?TermInterface {
         return self::getSingle($dataset, $filter)?->getObject();
     }
 
-    static public function getObjectValue(iDataset $dataset,
-                                          iQuadCompare | iQuadIterator | callable $filter = null): mixed {
+    static public function getObjectValue(DatasetInterface $dataset,
+                                          QuadCompareInterface | QuadIteratorInterface | callable $filter = null): mixed {
         return self::getObject($dataset, $filter)?->getValue();
     }
 
-    static public function getObjectLang(iDataset $dataset,
-                                         iQuadCompare | iQuadIterator | callable $filter = null): ?string {
+    static public function getObjectLang(DatasetInterface $dataset,
+                                         QuadCompareInterface | QuadIteratorInterface | callable $filter = null): ?string {
         $object = self::getObject($dataset, $filter);
         if ($object !== null && method_exists($object, 'getLang')) {
             return $object->getLang();
@@ -142,8 +140,8 @@ class DatasetExtractors {
         }
     }
 
-    static public function getObjectDatatype(iDataset $dataset,
-                                             iQuadCompare | iQuadIterator | callable $filter = null): ?string {
+    static public function getObjectDatatype(DatasetInterface $dataset,
+                                             QuadCompareInterface | QuadIteratorInterface | callable $filter = null): ?string {
         $object = self::getObject($dataset, $filter);
         if ($object !== null && method_exists($object, 'getDatatype')) {
             return $object->getDatatype();
@@ -154,39 +152,39 @@ class DatasetExtractors {
 
     /**
      * 
-     * @return array<iTerm>
+     * @return array<TermInterface>
      */
-    static public function getObjects(iDatasetListQuadParts $dataset,
-                                      iQuadCompare | iQuadIterator | callable $filter = null): array {
+    static public function getObjects(DatasetInterface $dataset,
+                                      QuadCompareInterface | QuadIteratorInterface | callable $filter = null): array {
         return iterator_to_array($dataset->listObjects($filter));
     }
 
-    static public function getLiteral(iDatasetListQuadParts $dataset,
-                                      iQuadCompare | iQuadIterator | callable $filter = null): ?iLiteral {
+    static public function getLiteral(DatasetInterface $dataset,
+                                      QuadCompareInterface | QuadIteratorInterface | callable $filter = null): ?LiteralInterface {
         foreach ($dataset->getIterator($filter) as $quad) {
             $object = $quad->getObject();
-            if ($object instanceof iLiteral) {
+            if ($object instanceof LiteralInterface) {
                 return $object;
             }
         }
         return null;
     }
 
-    static public function getLiteralValue(iDatasetListQuadParts $dataset,
-                                           iQuadCompare | iQuadIterator | callable $filter = null): mixed {
+    static public function getLiteralValue(DatasetInterface $dataset,
+                                           QuadCompareInterface | QuadIteratorInterface | callable $filter = null): mixed {
         return self::getLiteral($dataset, $filter)?->getValue();
     }
 
     /**
      * 
-     * @return array<iLiteral>
+     * @return array<LiteralInterface>
      */
-    static public function getLiterals(iDatasetListQuadParts $dataset,
-                                       iQuadCompare | iQuadIterator | callable $filter = null): array {
+    static public function getLiterals(DatasetInterface $dataset,
+                                       QuadCompareInterface | QuadIteratorInterface | callable $filter = null): array {
         $literals = [];
         foreach ($dataset->getIterator($filter) as $quad) {
             $object = $quad->getObject();
-            if ($object instanceof iLiteral) {
+            if ($object instanceof LiteralInterface) {
                 $literals[] = $object;
             }
         }
@@ -197,12 +195,12 @@ class DatasetExtractors {
      * 
      * @return array<mixed>
      */
-    static public function getLiteralValues(iDatasetListQuadParts $dataset,
-                                            iQuadCompare | iQuadIterator | callable $filter = null): array {
+    static public function getLiteralValues(DatasetInterface $dataset,
+                                            QuadCompareInterface | QuadIteratorInterface | callable $filter = null): array {
         $values = [];
         foreach ($dataset->getIterator($filter) as $quad) {
             $object = $quad->getObject();
-            if ($object instanceof iLiteral) {
+            if ($object instanceof LiteralInterface) {
                 $values[] = $object->getValue();
             }
         }
@@ -219,12 +217,12 @@ class DatasetExtractors {
      * No-language tag object literal value is stored under the empty string key.
      * @return array<mixed>
      */
-    static public function getLiteralValuesByLang(iDatasetListQuadParts $dataset,
-                                                  iQuadCompare | iQuadIterator | callable $filter = null): array {
+    static public function getLiteralValuesByLang(DatasetInterface $dataset,
+                                                  QuadCompareInterface | QuadIteratorInterface | callable $filter = null): array {
         $values = [];
         foreach ($dataset->getIterator($filter) as $quad) {
             $object = $quad->getObject();
-            if ($object instanceof iLiteral) {
+            if ($object instanceof LiteralInterface) {
                 $values[$object->getLang() ?? ''] = $object->getValue();
             }
         }
@@ -235,27 +233,27 @@ class DatasetExtractors {
      * 
      * @return array<mixed>
      */
-    static public function getObjectValues(iDatasetListQuadParts $dataset,
-                                           iQuadCompare | iQuadIterator | callable $filter = null): array {
+    static public function getObjectValues(DatasetInterface $dataset,
+                                           QuadCompareInterface | QuadIteratorInterface | callable $filter = null): array {
         return self::getValues($dataset, $filter, 'getObject');
     }
 
-    static public function getGraph(iDataset $dataset,
-                                    iQuadCompare | iQuadIterator | callable $filter = null): iNamedNode | iBlankNode | iDefaultGraph | null {
+    static public function getGraph(DatasetInterface $dataset,
+                                    QuadCompareInterface | QuadIteratorInterface | callable $filter = null): NamedNodeInterface | BlankNodeInterface | DefaultGraphInterface | null {
         return self::getSingle($dataset, $filter)?->getGraph();
     }
 
-    static public function getGraphUri(iDataset $dataset,
-                                       iQuadCompare | iQuadIterator | callable $filter = null): ?string {
+    static public function getGraphUri(DatasetInterface $dataset,
+                                       QuadCompareInterface | QuadIteratorInterface | callable $filter = null): ?string {
         return self::getGraph($dataset, $filter)?->getValue();
     }
 
     /**
      * 
-     * @return array<iNamedNode | iBlankNode | iDefaultGraph>
+     * @return array<NamedNodeInterface | BlankNodeInterface | DefaultGraphInterface>
      */
-    static public function getGraphs(iDatasetListQuadParts $dataset,
-                                     iQuadCompare | iQuadIterator | callable $filter = null): array {
+    static public function getGraphs(DatasetInterface $dataset,
+                                     QuadCompareInterface | QuadIteratorInterface | callable $filter = null): array {
         return iterator_to_array($dataset->listGraphs($filter));
     }
 
@@ -263,8 +261,8 @@ class DatasetExtractors {
      * 
      * @return array<string>
      */
-    static public function getGraphUris(iDatasetListQuadParts $dataset,
-                                        iQuadCompare | iQuadIterator | callable $filter = null): array {
+    static public function getGraphUris(DatasetInterface $dataset,
+                                        QuadCompareInterface | QuadIteratorInterface | callable $filter = null): array {
         return self::getValues($dataset, $filter, 'getGraph');
     }
 }

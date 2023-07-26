@@ -15,7 +15,7 @@
     "require": {
         "php": ">=8.0",
         "zozlak/rdf-constants": "^1",
-        "sweetrdf/rdf-interface": "dev-datasetNode"
+        "sweetrdf/rdf-interface": "^2.0.0-RC1"
     },
     "autoload": {
         "psr-4": {
@@ -34,6 +34,5 @@
         "psr-4": {
             "termTemplates\\": "tests"
         }
-    },
-    "minimum-stability": "dev"
+    }
 }
