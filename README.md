@@ -11,6 +11,12 @@ Provides:
   To be used mainly as `rdfInterface\Dataset` methods `$filter` parameter.
 * A convenient methods for extracting single terms and/or their values from `rdfInterface\Dataset`.
 
+## Quad-matching classes
+
+* `termTemplates\QuadTemplate`
+* `termTemplates\PredicateTemplate` - a `termTemplates\QuadTemplate` variant skipping the subject
+  (convenient when searching trough the `rdfInterface\DatasetNode`)
+
 ## Term-matching classes
 
 (all classes in the `termTemplate` namespace)
@@ -29,7 +35,7 @@ Provides:
 * `termTemplates\NotTemplate` - negates the result of the `equals()` operation on a given `rdfInterface\TermCompare` object.
 * `termTemplates\AnyOfTemplate` - matches terms being equal to any of given list of `rdfInterface\TermCompare` objects.
 * `termTemplates\DatasetExtractors` - provides a set of static methods for extracting `rdfInterface\Dataset` quad elements
-  as single `rdfInterface\Term`, single value, array of `rdfInterface\Term` or array of values.  
+  as single `rdfInterface\Term`, single value, array of `rdfInterface\Term` or array of values.
 
 ## Installation
 
