@@ -39,19 +39,12 @@ use rdfInterface\DefaultGraphInterface;
  */
 class QuadTemplate implements TermCompareInterface, QuadCompareInterface {
 
-    public TermCompareInterface | TermInterface | null $subject;
-    public TermCompareInterface | TermInterface | null $predicate;
-    public TermCompareInterface | TermInterface | null $object;
-    public TermCompareInterface | TermInterface | null $graph;
-
-    public function __construct(TermCompareInterface | TermInterface | null $subject = null,
-                                TermCompareInterface | TermInterface | null $predicate = null,
-                                TermCompareInterface | TermInterface | null $object = null,
-                                TermCompareInterface | TermInterface | null $graph = null) {
-        $this->subject   = $subject;
-        $this->predicate = $predicate;
-        $this->object    = $object;
-        $this->graph     = $graph;
+    public function __construct(public TermCompareInterface | TermInterface | null $subject = null,
+                                public TermCompareInterface | TermInterface | null $predicate = null,
+                                public TermCompareInterface | TermInterface | null $object = null,
+                                public TermCompareInterface | TermInterface | null $graph = null,
+                                public bool $negate = false) {
+        
     }
 
     public function __toString(): string {
@@ -60,10 +53,11 @@ class QuadTemplate implements TermCompareInterface, QuadCompareInterface {
 
     public function equals(TermCompareInterface $quad): bool {
         if ($quad instanceof QuadInterface) {
-            return ($this->subject === null || $this->subject->equals($quad->getSubject())) &&
+            $equal = ($this->subject === null || $this->subject->equals($quad->getSubject())) &&
                 ($this->predicate === null || $this->predicate->equals($quad->getPredicate())) &&
                 ($this->object === null || $this->object->equals($quad->getObject())) &&
                 ($this->graph === null || $this->graph instanceof DefaultGraphInterface || $this->graph->equals($quad->getGraph()));
+            return $this->negate ? !$equal : $equal;
         } else {
             return false;
         }
