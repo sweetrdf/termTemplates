@@ -221,6 +221,26 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/termTemplates-NotTemplate.html#method_equals"
         },                {
+            "fqsen": "\\termTemplates\\NotTemplate\u003A\u003AgetGraph\u0028\u0029",
+            "name": "getGraph",
+            "summary": "",
+            "url": "classes/termTemplates-NotTemplate.html#method_getGraph"
+        },                {
+            "fqsen": "\\termTemplates\\NotTemplate\u003A\u003AgetObject\u0028\u0029",
+            "name": "getObject",
+            "summary": "",
+            "url": "classes/termTemplates-NotTemplate.html#method_getObject"
+        },                {
+            "fqsen": "\\termTemplates\\NotTemplate\u003A\u003AgetPredicate\u0028\u0029",
+            "name": "getPredicate",
+            "summary": "",
+            "url": "classes/termTemplates-NotTemplate.html#method_getPredicate"
+        },                {
+            "fqsen": "\\termTemplates\\NotTemplate\u003A\u003AgetSubject\u0028\u0029",
+            "name": "getSubject",
+            "summary": "",
+            "url": "classes/termTemplates-NotTemplate.html#method_getSubject"
+        },                {
             "fqsen": "\\termTemplates\\NotTemplate\u003A\u003A\u0024term",
             "name": "term",
             "summary": "",
@@ -370,6 +390,11 @@ Search.appendIndex(
             "name": "graph",
             "summary": "",
             "url": "classes/termTemplates-QuadTemplate.html#property_graph"
+        },                {
+            "fqsen": "\\termTemplates\\QuadTemplate\u003A\u003A\u0024negate",
+            "name": "negate",
+            "summary": "",
+            "url": "classes/termTemplates-QuadTemplate.html#property_negate"
         },                {
             "fqsen": "\\termTemplates\\TermTemplatesException",
             "name": "TermTemplatesException",
@@ -746,6 +771,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/rdfInterface-LiteralInterface.html#constant_CAST_DATATYPE"
         },                {
+            "fqsen": "\\rdfInterface\\MultipleQuadsMatchedException",
+            "name": "MultipleQuadsMatchedException",
+            "summary": "Specialization\u0020of\u0020the\u0020\\UnexpectedValueException\u0020indicating\u0020multiple\u0020quads\nmatch\u0020while\u0020accessing\u0020a\u0020DatasetInterface\u0020object\u0020using\u0020the\u0020ArrayAccess\u0020syntax\n\u0028\u0024dataset\u005Boffset\u005D\u0029",
+            "url": "classes/rdfInterface-MultipleQuadsMatchedException.html"
+        },                {
             "fqsen": "\\rdfInterface\\NamedNodeInterface",
             "name": "NamedNodeInterface",
             "summary": "Description\u0020of\u0020RdfTerm",
@@ -945,6 +975,26 @@ Search.appendIndex(
             "name": "current",
             "summary": "",
             "url": "classes/rdfInterface-TermIteratorInterface.html#method_current"
+        },                {
+            "fqsen": "\\rdfInterface\\TermIteratorInterface\u003A\u003Acontains\u0028\u0029",
+            "name": "contains",
+            "summary": "",
+            "url": "classes/rdfInterface-TermIteratorInterface.html#method_contains"
+        },                {
+            "fqsen": "\\rdfInterface\\TermIteratorInterface\u003A\u003Askip\u0028\u0029",
+            "name": "skip",
+            "summary": "",
+            "url": "classes/rdfInterface-TermIteratorInterface.html#method_skip"
+        },                {
+            "fqsen": "\\rdfInterface\\TermIteratorInterface\u003A\u003Aintersect\u0028\u0029",
+            "name": "intersect",
+            "summary": "",
+            "url": "classes/rdfInterface-TermIteratorInterface.html#method_intersect"
+        },                {
+            "fqsen": "\\rdfInterface\\TermIteratorInterface\u003A\u003AgetValues\u0028\u0029",
+            "name": "getValues",
+            "summary": "Extracts\u0020values\u0020of\u0020all\u0020terms\u0020and\u0020returns\u0020them\u0020as\u0020an\u0020array.",
+            "url": "classes/rdfInterface-TermIteratorInterface.html#method_getValues"
         },                {
             "fqsen": "\\",
             "name": "\\",
