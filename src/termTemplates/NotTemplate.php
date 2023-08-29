@@ -27,17 +27,18 @@
 namespace termTemplates;
 
 use rdfInterface\TermCompareInterface;
+use rdfInterface\QuadCompareInterface;
 
 /**
  * Provides condition negation 
  *
  * @author zozlak
  */
-class NotTemplate implements TermCompareInterface {
+class NotTemplate implements TermCompareInterface, QuadCompareInterface {
 
-    private TermCompareInterface $term;
+    private TermCompareInterface | QuadCompareInterface $term;
 
-    public function __construct(TermCompareInterface $term) {
+    public function __construct(TermCompareInterface | QuadCompareInterface $term) {
         $this->term = $term;
     }
 
@@ -45,7 +46,23 @@ class NotTemplate implements TermCompareInterface {
         return '[not ' . $this->term . ']';
     }
 
-    public function equals(TermCompareInterface $term): bool {
+    public function equals(TermCompareInterface | QuadCompareInterface $term): bool {
         return !$this->term->equals($term);
+    }
+
+    public function getGraph(): TermCompareInterface | null {
+        return $this->term instanceof QuadCompareInterface ? $this->term->getGraph() : null;
+    }
+
+    public function getObject(): TermCompareInterface | null {
+        return $this->term instanceof QuadCompareInterface ? $this->term->getObject() : null;
+    }
+
+    public function getPredicate(): TermCompareInterface | null {
+        return $this->term instanceof QuadCompareInterface ? $this->term->getPredicate() : null;
+    }
+
+    public function getSubject(): TermCompareInterface | null {
+        return $this->term instanceof QuadCompareInterface ? $this->term->getSubject() : null;
     }
 }
