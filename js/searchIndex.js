@@ -13,7 +13,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\termTemplates\\AnyOfTemplate\u003A\u003A__toString\u0028\u0029",
             "name": "__toString",
-            "summary": "",
+            "summary": "Should\u0020return\u003A",
             "url": "classes/termTemplates-AnyOfTemplate.html#method___toString"
         },                {
             "fqsen": "\\termTemplates\\AnyOfTemplate\u003A\u003Aequals\u0028\u0029",
@@ -168,7 +168,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\termTemplates\\LiteralTemplate\u003A\u003A__toString\u0028\u0029",
             "name": "__toString",
-            "summary": "",
+            "summary": "Should\u0020return\u003A",
             "url": "classes/termTemplates-LiteralTemplate.html#method___toString"
         },                {
             "fqsen": "\\termTemplates\\LiteralTemplate\u003A\u003Aequals\u0028\u0029",
@@ -193,7 +193,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\termTemplates\\NamedNodeTemplate\u003A\u003A__toString\u0028\u0029",
             "name": "__toString",
-            "summary": "",
+            "summary": "Should\u0020return\u003A",
             "url": "classes/termTemplates-NamedNodeTemplate.html#method___toString"
         },                {
             "fqsen": "\\termTemplates\\NamedNodeTemplate\u003A\u003Aequals\u0028\u0029",
@@ -213,7 +213,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\termTemplates\\NotTemplate\u003A\u003A__toString\u0028\u0029",
             "name": "__toString",
-            "summary": "",
+            "summary": "Should\u0020return\u003A",
             "url": "classes/termTemplates-NotTemplate.html#method___toString"
         },                {
             "fqsen": "\\termTemplates\\NotTemplate\u003A\u003Aequals\u0028\u0029",
@@ -258,7 +258,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\termTemplates\\NumericTemplate\u003A\u003A__toString\u0028\u0029",
             "name": "__toString",
-            "summary": "",
+            "summary": "Should\u0020return\u003A",
             "url": "classes/termTemplates-NumericTemplate.html#method___toString"
         },                {
             "fqsen": "\\termTemplates\\NumericTemplate\u003A\u003Aequals\u0028\u0029",
@@ -298,7 +298,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\termTemplates\\PredicateTemplate\u003A\u003A__toString\u0028\u0029",
             "name": "__toString",
-            "summary": "",
+            "summary": "Should\u0020return\u003A",
             "url": "classes/termTemplates-PredicateTemplate.html#method___toString"
         },                {
             "fqsen": "\\termTemplates\\PredicateTemplate\u003A\u003Aequals\u0028\u0029",
@@ -343,7 +343,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\termTemplates\\QuadTemplate\u003A\u003A__toString\u0028\u0029",
             "name": "__toString",
-            "summary": "",
+            "summary": "Should\u0020return\u003A",
             "url": "classes/termTemplates-QuadTemplate.html#method___toString"
         },                {
             "fqsen": "\\termTemplates\\QuadTemplate\u003A\u003Aequals\u0028\u0029",
@@ -413,7 +413,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\termTemplates\\ValueTemplate\u003A\u003A__toString\u0028\u0029",
             "name": "__toString",
-            "summary": "",
+            "summary": "Should\u0020return\u003A",
             "url": "classes/termTemplates-ValueTemplate.html#method___toString"
         },                {
             "fqsen": "\\termTemplates\\ValueTemplate\u003A\u003Aequals\u0028\u0029",
@@ -995,6 +995,11 @@ Search.appendIndex(
             "name": "equals",
             "summary": "",
             "url": "classes/rdfInterface-TermCompareInterface.html#method_equals"
+        },                {
+            "fqsen": "\\rdfInterface\\TermCompareInterface\u003A\u003A__toString\u0028\u0029",
+            "name": "__toString",
+            "summary": "Should\u0020return\u003A",
+            "url": "classes/rdfInterface-TermCompareInterface.html#method___toString"
         },                {
             "fqsen": "\\rdfInterface\\TermInterface",
             "name": "TermInterface",
