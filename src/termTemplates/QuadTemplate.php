@@ -39,12 +39,22 @@ use rdfInterface\DefaultGraphInterface;
  */
 class QuadTemplate implements TermCompareInterface, QuadCompareInterface {
 
-    public function __construct(public TermCompareInterface | TermInterface | null $subject = null,
-                                public TermCompareInterface | TermInterface | null $predicate = null,
-                                public TermCompareInterface | TermInterface | null $object = null,
-                                public TermCompareInterface | TermInterface | null $graph = null,
-                                public bool $negate = false) {
-        
+    public TermCompareInterface | TermInterface | null $subject;
+    public TermCompareInterface | TermInterface | null $predicate;
+    public TermCompareInterface | TermInterface | null $object;
+    public TermCompareInterface | TermInterface | null $graph;
+    public bool $negate;
+
+    public function __construct(TermCompareInterface | TermInterface | string | null $subject = null,
+                                TermCompareInterface | TermInterface | string | null $predicate = null,
+                                TermCompareInterface | TermInterface | string | null $object = null,
+                                TermCompareInterface | TermInterface | string | null $graph = null,
+                                bool $negate = false) {
+        $this->subject   = is_string($subject) ? new ValueTemplate($subject) : $subject;
+        $this->predicate = is_string($predicate) ? new ValueTemplate($predicate) : $predicate;
+        $this->object    = is_string($object) ? new ValueTemplate($object) : $object;
+        $this->graph     = is_string($graph) ? new ValueTemplate($graph) : $graph;
+        $this->negate    = $negate;
     }
 
     public function __toString(): string {
