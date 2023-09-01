@@ -326,6 +326,31 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/termTemplates-PredicateTemplate.html#method_getGraph"
         },                {
+            "fqsen": "\\termTemplates\\PredicateTemplate\u003A\u003AwithSubject\u0028\u0029",
+            "name": "withSubject",
+            "summary": "",
+            "url": "classes/termTemplates-PredicateTemplate.html#method_withSubject"
+        },                {
+            "fqsen": "\\termTemplates\\PredicateTemplate\u003A\u003AwithPredicate\u0028\u0029",
+            "name": "withPredicate",
+            "summary": "",
+            "url": "classes/termTemplates-PredicateTemplate.html#method_withPredicate"
+        },                {
+            "fqsen": "\\termTemplates\\PredicateTemplate\u003A\u003AwithObject\u0028\u0029",
+            "name": "withObject",
+            "summary": "",
+            "url": "classes/termTemplates-PredicateTemplate.html#method_withObject"
+        },                {
+            "fqsen": "\\termTemplates\\PredicateTemplate\u003A\u003AwithGraph\u0028\u0029",
+            "name": "withGraph",
+            "summary": "",
+            "url": "classes/termTemplates-PredicateTemplate.html#method_withGraph"
+        },                {
+            "fqsen": "\\termTemplates\\PredicateTemplate\u003A\u003AwithNegate\u0028\u0029",
+            "name": "withNegate",
+            "summary": "",
+            "url": "classes/termTemplates-PredicateTemplate.html#method_withNegate"
+        },                {
             "fqsen": "\\termTemplates\\PredicateTemplate\u003A\u003A\u0024tmpl",
             "name": "tmpl",
             "summary": "",
@@ -370,6 +395,31 @@ Search.appendIndex(
             "name": "getGraph",
             "summary": "",
             "url": "classes/termTemplates-QuadTemplate.html#method_getGraph"
+        },                {
+            "fqsen": "\\termTemplates\\QuadTemplate\u003A\u003AwithSubject\u0028\u0029",
+            "name": "withSubject",
+            "summary": "",
+            "url": "classes/termTemplates-QuadTemplate.html#method_withSubject"
+        },                {
+            "fqsen": "\\termTemplates\\QuadTemplate\u003A\u003AwithPredicate\u0028\u0029",
+            "name": "withPredicate",
+            "summary": "",
+            "url": "classes/termTemplates-QuadTemplate.html#method_withPredicate"
+        },                {
+            "fqsen": "\\termTemplates\\QuadTemplate\u003A\u003AwithObject\u0028\u0029",
+            "name": "withObject",
+            "summary": "",
+            "url": "classes/termTemplates-QuadTemplate.html#method_withObject"
+        },                {
+            "fqsen": "\\termTemplates\\QuadTemplate\u003A\u003AwithGraph\u0028\u0029",
+            "name": "withGraph",
+            "summary": "",
+            "url": "classes/termTemplates-QuadTemplate.html#method_withGraph"
+        },                {
+            "fqsen": "\\termTemplates\\QuadTemplate\u003A\u003AwithNegate\u0028\u0029",
+            "name": "withNegate",
+            "summary": "",
+            "url": "classes/termTemplates-QuadTemplate.html#method_withNegate"
         },                {
             "fqsen": "\\termTemplates\\QuadTemplate\u003A\u003A\u0024subject",
             "name": "subject",
