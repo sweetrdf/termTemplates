@@ -26,7 +26,6 @@
 
 namespace termTemplates;
 
-use rdfInterface\TermInterface;
 use rdfInterface\TermCompareInterface;
 use rdfInterface\QuadCompareInterface;
 
@@ -39,10 +38,11 @@ class PredicateTemplate implements TermCompareInterface, QuadCompareInterface {
 
     private QuadTemplate $tmpl;
 
-    public function __construct(TermCompareInterface | TermInterface | null $predicate = null,
-                                TermCompareInterface | TermInterface | null $object = null,
-                                TermCompareInterface | TermInterface | null $graph = null) {
-        $this->tmpl = new QuadTemplate(null, $predicate, $object, $graph);
+    public function __construct(TermCompareInterface | null $predicate = null,
+                                TermCompareInterface | null $object = null,
+                                TermCompareInterface | null $graph = null,
+                                bool $negate = false) {
+        $this->tmpl = new QuadTemplate(null, $predicate, $object, $graph, $negate);
     }
 
     public function __toString(): string {
@@ -67,5 +67,25 @@ class PredicateTemplate implements TermCompareInterface, QuadCompareInterface {
 
     public function getGraph(): TermCompareInterface | null {
         return $this->tmpl->getGraph();
+    }
+
+    public function withSubject(TermCompareInterface | string | null $subject = null): self {
+        return $this->tmpl->withSubject($subject);
+    }
+
+    public function withPredicate(TermCompareInterface | string | null $predicate = null): self {
+        return $this->tmpl->withPredicate($predicate);
+    }
+
+    public function withObject(TermCompareInterface | string | null $object = null): self {
+        return $this->tmpl->withObject($object);
+    }
+
+    public function withGraph(TermCompareInterface | string | null $graph = null): self {
+        return $this->tmpl->withGraph($graph);
+    }
+
+    public function withNegate(bool $negate): self {
+        return $this->tmpl->withNegate($negate);
     }
 }
