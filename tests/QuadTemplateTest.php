@@ -90,7 +90,7 @@ class QuadTemplateTest extends \PHPUnit\Framework\TestCase {
     }
 
     public function testToString(): void {
-        $this->assertEquals('[<foo> <bar> <baz> ]', (string) (new QuadTemplate(DF::namedNode('foo'), DF::namedNode('bar'), DF::namedNode('baz'))));
+        $this->assertEquals('[foo bar baz ]', (string) (new QuadTemplate(DF::namedNode('foo'), DF::namedNode('bar'), DF::namedNode('baz'))));
     }
 
     public function testGetters(): void {
