@@ -38,9 +38,9 @@ class PredicateTemplate implements TermCompareInterface, QuadCompareInterface {
 
     private QuadTemplate $tmpl;
 
-    public function __construct(TermCompareInterface | null $predicate = null,
-                                TermCompareInterface | null $object = null,
-                                TermCompareInterface | null $graph = null,
+    public function __construct(TermCompareInterface | string | null $predicate = null,
+                                TermCompareInterface | string | null $object = null,
+                                TermCompareInterface | string | null $graph = null,
                                 bool $negate = false) {
         $this->tmpl = new QuadTemplate(null, $predicate, $object, $graph, $negate);
     }
