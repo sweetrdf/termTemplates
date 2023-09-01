@@ -37,7 +37,12 @@ use rdfInterface\NamedNodeInterface;
 class NamedNodeTemplate extends ValueTemplate {
 
     public function __toString(): string {
-        return "[nn $this->matchMode $this->value]";
+        $value = match (count($this->value)) {
+            0 => '',
+            1 => $this->value[0],
+            default => '[' . implode(', ', $this->value) . ']'
+        };
+        return "[nn $this->matchMode $value]";
     }
 
     public function equals(TermCompareInterface $term): bool {

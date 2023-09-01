@@ -148,6 +148,12 @@ class ValueTemplateTest extends \PHPUnit\Framework\TestCase {
         $tmplt  = new ValueTemplate('/Lorem|foo/', ValueTemplate::REGEX);
         $result = array_map(fn($x) => $tmplt->equals($x), $literals);
         $this->assertEquals([true, false, true], $result);
+        
+        // match multiple values
+        $tmplt  = new ValueTemplate(['Lorem', 'bar'], ValueTemplate::CONTAINS);
+        $result = array_map(fn($x) => $tmplt->equals($x), $literals);
+        $this->assertEquals([true, false, true], $result);
+        $this->assertEquals('[v contains [Lorem, bar]]', (string) $tmplt);
     }
 
     public function testWrongMatchMode(): void {

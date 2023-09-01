@@ -53,62 +53,76 @@ class ValueTemplate implements TermCompareInterface {
      * @var callable
      */
     private $fn;
-    protected string | null $value;
+
+    /**
+     * 
+     * @var array<string>
+     */
+    protected array $value = [];
     protected string $matchMode;
 
-    public function __construct(?string $value = null,
+    /**
+     * 
+     * @param string|array<string>|null $value If multiple values are provided,
+     *   the comparison result will be "any of comparisons equals true"
+     * @param string $matchMode
+     * @throws TermTemplatesException
+     */
+    public function __construct(string | array | null $value = null,
                                 string $matchMode = self::EQUALS) {
         $value           = $matchMode === self::ANY ? null : $value;
         $this->matchMode = $value === null ? self::ANY : $matchMode;
-        $this->value     = $value;
+        if ($value !== null) {
+            $this->value = is_array($value) ? $value : [$value];
+        }
         switch ($this->matchMode) {
             case self::EQUALS:
-                $this->fn = function (TermInterface $term) use ($value) {
+                $this->fn = function (TermInterface $term, string $value) {
                     return $term->getValue() === $value;
                 };
                 break;
             case self::NOT_EQUALS:
-                $this->fn = function (TermInterface $term) use ($value) {
+                $this->fn = function (TermInterface $term, string $value) {
                     return $term->getValue() !== $value;
                 };
                 break;
             case self::STARTS:
-                $this->fn = function (TermInterface $term) use ($value): bool {
+                $this->fn = function (TermInterface $term, string $value): bool {
                     return str_starts_with((string) $term->getValue(), $value ?? '');
                 };
                 break;
             case self::ENDS:
-                $this->fn = function (TermInterface $term) use ($value): bool {
+                $this->fn = function (TermInterface $term, string $value): bool {
                     return str_ends_with((string) $term->getValue(), $value ?? '');
                 };
                 break;
             case self::CONTAINS:
-                $this->fn = function (TermInterface $term) use ($value): bool {
+                $this->fn = function (TermInterface $term, string $value): bool {
                     return str_contains((string) $term->getValue(), $value ?? '');
                 };
                 break;
             case self::GREATER:
-                $this->fn = function (TermInterface $term) use ($value): bool {
+                $this->fn = function (TermInterface $term, string $value): bool {
                     return $term->getValue() > $value;
                 };
                 break;
             case self::LOWER;
-                $this->fn = function (TermInterface $term) use ($value): bool {
+                $this->fn = function (TermInterface $term, string $value): bool {
                     return $term->getValue() < $value;
                 };
                 break;
             case self::GREATER_EQUAL:
-                $this->fn = function (TermInterface $term) use ($value): bool {
+                $this->fn = function (TermInterface $term, string $value): bool {
                     return $term->getValue() >= $value;
                 };
                 break;
             case self::LOWER_EQUAL:
-                $this->fn = function (TermInterface $term) use ($value): bool {
+                $this->fn = function (TermInterface $term, string $value): bool {
                     return $term->getValue() <= $value;
                 };
                 break;
             case self::REGEX:
-                $this->fn = function (TermInterface $term) use ($value): bool {
+                $this->fn = function (TermInterface $term, string $value): bool {
                     return (bool) preg_match((string) $value, (string) $term->getValue());
                 };
                 break;
@@ -123,10 +137,20 @@ class ValueTemplate implements TermCompareInterface {
     }
 
     public function __toString(): string {
-        return "[v $this->matchMode $this->value]";
+        $value = match (count($this->value)) {
+            0 => '',
+            1 => $this->value[0],
+            default => '[' . implode(', ', $this->value) . ']'
+        };
+        return "[v $this->matchMode $value]";
     }
 
     public function equals(TermCompareInterface $term): bool {
-        return ($this->fn)($term);
+        foreach ($this->value as $i) {
+            if (($this->fn)($term, $i)) {
+                return true;
+            }
+        }
+        return $this->matchMode === self::ANY;
     }
 }

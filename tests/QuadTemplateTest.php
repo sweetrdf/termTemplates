@@ -56,7 +56,7 @@ class QuadTemplateTest extends \PHPUnit\Framework\TestCase {
                 'qt'      => new QuadTemplate($nn1),
                 'matches' => [0, 1, 4]],
             [
-                'qt'      => new QuadTemplate(null, $nn2),
+                'qt'      => new QuadTemplate(null, $nn2->getValue()),
                 'matches' => [2, 3]],
             [
                 'qt'      => new QuadTemplate(null, null, $l1),
@@ -71,7 +71,7 @@ class QuadTemplateTest extends \PHPUnit\Framework\TestCase {
                 'matches' => [4]
             ],
             [
-                'qt'      => new QuadTemplate($bn, $nn2),
+                'qt'      => new QuadTemplate($bn->getValue(), $nn2),
                 'matches' => [2, 3]
             ],
             [
@@ -83,12 +83,15 @@ class QuadTemplateTest extends \PHPUnit\Framework\TestCase {
             foreach ($q as $m => $j) {
                 $expected = (int) in_array($m, $i['matches']);
                 $this->assertEquals($expected, $i['qt']->equals($j), "equals() between QuadTemplate $n and Quad $m failed");
+                
+                $expected = (int) (!$expected);
+                $this->assertEquals($expected, $i['qt']->withNegate(true)->equals($j), "equals() between negated QuadTemplate $n and Quad $m failed");
             }
         }
 
         $this->assertFalse((new QuadTemplate($nn1))->equals(DF::namedNode('foo')));
     }
-
+    
     public function testToString(): void {
         $this->assertEquals('[foo bar baz ]', (string) (new QuadTemplate(DF::namedNode('foo'), DF::namedNode('bar'), DF::namedNode('baz'))));
     }

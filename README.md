@@ -15,7 +15,7 @@ Provides:
 
 * `termTemplates\QuadTemplate`
 * `termTemplates\PredicateTemplate` - a `termTemplates\QuadTemplate` variant skipping the subject
-  (convenient when searching trough the `rdfInterface\DatasetNode`)
+  (convenient for filtering the `rdfInterface\DatasetNode`)
 
 ## Term-matching classes
 
@@ -34,7 +34,6 @@ Provides:
 
 * `termTemplates\NotTemplate` - negates the result of the `equals()` operation on a given `rdfInterface\TermCompare` object.
 * `termTemplates\AnyOfTemplate` - matches terms being equal to any of given list of `rdfInterface\TermCompare` objects.
-* `termTemplates\DatasetExtractors` - provides a set of static methods for extracting `rdfInterface\Dataset` quad elements
   as single `rdfInterface\Term`, single value, array of `rdfInterface\Term` or array of values.
 
 ## Installation
@@ -69,9 +68,9 @@ Remarks:
 $df = new quickRdf\DataFactory();
 
 $literals = [
-    $df->literal('Lorem ipsum', 'lat'),
-    $df->namedNode('http://ipsum.dolor/sit#amet'),
-    $df->literal('foo bar'),
+    $df::literal('Lorem ipsum', 'lat'),
+    $df::namedNode('http://ipsum.dolor/sit#amet'),
+    $df::literal('foo bar'),
 ];
 
 // find all terms containing 'ipsum'
@@ -102,6 +101,12 @@ print_r(array_map(fn($x) => $tmplt->equals($x), $literals));
 // find all terms matching a 'Lorem|foo' regular expression
 // true, false, true
 $tmplt = new termTemplates\ValueTemplate('/Lorem|foo/', termTemplates\ValueTemplate::REGEX);
+print_r(array_map(fn($x) => $tmplt->equals($x), $literals));
+
+// ValueTemplate, NamedNodeTemplate and LiteralTemplate can be passed multiple values
+// In such a case condition needs to be fulfilled on any value
+// true, true, false
+$tmplt = new termTemplates\ValueTemplate(['Lorem ipsum', 'http://ipsum.dolor/sit#amet']);
 print_r(array_map(fn($x) => $tmplt->equals($x), $literals));
 ```
 
@@ -181,45 +186,16 @@ $tmplt = new termTemplates\QuadTemplate(object: new termTemplates\LiteralTemplat
 
 // find all quads with a given subject within a given graph
 $tmplt = new termTemplates\QuadTemplate(
-    subject: $df->namedNode('http://desired/subject'),
-    graph: $df->namedNode('http://desired/graph')
+    subject: 'http://desired/subject',
+    graph: 'http://desired/graph'
 );
-```
 
-### Dataset extractors
+// find all quads with a given predicate
+$tmplt = new termTemplates\QuadTemplate(predicate: 'http://desired/predicate');
+//or
+$tmplt = new termTemplates\PredicateTemplate('http://desired/predicate');
 
-```php
-use termTemplates\DatasetExtractors as DE;
-$df        = new quickRdf\DataFactory();
-$notEmpty   = new quickRdf\Dataset();
-$notEmpty[] = $df->quad($df->namedNode('s'), $df->namedNode('p'), $df->namedNode('o'), $df->namedNode('g'));
-$empty      = new quickRdf\Dataset();
-// we don't know if the $dataset is empty or not
-$dataset    = rand(0, 1) ? $notEmpty : $empty;
-
-// print any quad's subject URI or null if the dataset is empty
-echo DE::getSubjectValue($dataset);
-// instead of purely rdfInterface-based
-($dataset[0] ?? null)?->getSubject()->getValue();
-
-// it can be also applied to the subject/predicate/object/graph as a term, e.g.
-echo DE::getPredicate($dataset);
-// instead of purely rdfInterface-based
-($dataset[0] ?? null)?->getPredicate();
-
-// it's also possible to extract all subject/predicate/object/graph terms/values as an array, e.g.:
-print_r(DE::getObjectValues($dataset));
-// instead of purely rdfInterface-based
-print_r(array_map(
-    fn($quad) => $quad->getObject()->getValue(), 
-    iterator_to_array($dataset)
-));
-
-// as well as some goodies for dealing with literal values
-$dataset   = new quickRdf\Dataset();
-$dataset[] = $df->quad($df->namedNode('s'), $df->namedNode('p'), $df->named node('nn'));
-$dataset[] = $df->quad($df->namedNode('s'), $df->namedNode('p'), $df->literal('o en', 'en'));
-$dataset[] = $df->quad($df->namedNode('s'), $df->namedNode('p'), $df->literal('o de', 'de'));
-print_r(DE::getLiteralValuesByLang($dataset)); // ['en' => 'o en', 'de' => 'o de']
-print_r(DE::getLiteralValues($dataset)); // ['o en', 'o de']
+// both QuadTemplate and PredicateTemplate support negation, e.g.
+// find all quads with subject different than 'http://unwanted/subject'
+$tmplt = new termTemplates\QuadTemplate('http://desired/predicate', negate: true);
 ```

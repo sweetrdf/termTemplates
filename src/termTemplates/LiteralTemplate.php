@@ -39,7 +39,14 @@ class LiteralTemplate extends ValueTemplate {
     private string | null $lang;
     private string | null $datatype;
 
-    public function __construct(string | null $value = null,
+    /**
+     * 
+     * @param string|array<string>|null $value
+     * @param string $matchMode
+     * @param string|null $lang
+     * @param string|null $datatype
+     */
+    public function __construct(string | array | null $value = null,
                                 string $matchMode = self::EQUALS,
                                 string | null $lang = null,
                                 string | null $datatype = null) {
@@ -49,7 +56,12 @@ class LiteralTemplate extends ValueTemplate {
     }
 
     public function __toString(): string {
-        return "[l $this->matchMode \"$this->value\"@$this->lang^^$this->datatype]";
+        $value = match (count($this->value)) {
+            0 => '',
+            1 => $this->value[0],
+            default => '[' . implode(', ', $this->value) . ']'
+        };
+        return "[l $this->matchMode \"$value\"@$this->lang^^$this->datatype]";
     }
 
     public function equals(TermCompareInterface $term): bool {
