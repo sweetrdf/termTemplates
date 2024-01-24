@@ -277,20 +277,20 @@
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/termTemplates-LiteralTemplate.html#method___construct">__construct()</a>
+    <a href="classes/termTemplates-ValueTemplate.html#method___construct">__construct()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/termTemplates-LiteralTemplate.html#method___toString">__toString()</a>
+    <a href="classes/termTemplates-ValueTemplate.html#method___toString">__toString()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
 <dd>Should return:</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/termTemplates-LiteralTemplate.html#method_equals">equals()</a>
+    <a href="classes/termTemplates-ValueTemplate.html#method_equals">equals()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
@@ -299,6 +299,8 @@
 
 
 
+
+        
 
         
     <section class="phpdocumentor-constants">
@@ -805,20 +807,20 @@
 >
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
-        <a href="classes/termTemplates-LiteralTemplate.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/termTemplates-ValueTemplate.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/LiteralTemplate.php"><a href="files/src-termtemplates-literaltemplate.html"><abbr title="src/termTemplates/LiteralTemplate.php">LiteralTemplate.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/ValueTemplate.php"><a href="files/src-termtemplates-valuetemplate.html"><abbr title="src/termTemplates/ValueTemplate.php">ValueTemplate.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">49</span>
+    <span class="phpdocumentor-element-found-in__line">71</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string|array&lt;string|int, string&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$matchMode</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">self::EQUALS</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$lang</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$datatype</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string|array&lt;string|int, string&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$matchMode</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">self::EQUALS</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -830,7 +832,10 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string|array&lt;string|int, string&gt;|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>If multiple values are provided,
+the comparison result will be &quot;any of comparisons equals true&quot;</p>
+</section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$matchMode</span>
@@ -839,23 +844,24 @@
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$lang</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$datatype</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/termTemplates-ValueTemplate.html#method___construct#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/termTemplates-TermTemplatesException.html"><abbr title="\termTemplates\TermTemplatesException">TermTemplatesException</abbr></a></span>
+                                                            
+                                             
+                                    </dd>
+                                            </dl>
 
     
 </article>
@@ -867,13 +873,13 @@
 >
     <h4 class="phpdocumentor-element__name" id="method___toString">
         __toString()
-        <a href="classes/termTemplates-LiteralTemplate.html#method___toString" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/termTemplates-ValueTemplate.html#method___toString" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/LiteralTemplate.php"><a href="files/src-termtemplates-literaltemplate.html"><abbr title="src/termTemplates/LiteralTemplate.php">LiteralTemplate.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/ValueTemplate.php"><a href="files/src-termtemplates-valuetemplate.html"><abbr title="src/termTemplates/ValueTemplate.php">ValueTemplate.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">58</span>
+    <span class="phpdocumentor-element-found-in__line">139</span>
 
     </aside>
 
@@ -909,13 +915,13 @@
 >
     <h4 class="phpdocumentor-element__name" id="method_equals">
         equals()
-        <a href="classes/termTemplates-LiteralTemplate.html#method_equals" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/termTemplates-ValueTemplate.html#method_equals" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/LiteralTemplate.php"><a href="files/src-termtemplates-literaltemplate.html"><abbr title="src/termTemplates/LiteralTemplate.php">LiteralTemplate.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/ValueTemplate.php"><a href="files/src-termtemplates-valuetemplate.html"><abbr title="src/termTemplates/ValueTemplate.php">ValueTemplate.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">67</span>
+    <span class="phpdocumentor-element-found-in__line">148</span>
 
     </aside>
 
@@ -1087,9 +1093,9 @@
                         <li class="phpdocumentor-on-this-page-section__title">Methods</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                                            <li><a href="classes/termTemplates-LiteralTemplate.html#method___construct">__construct()</a></li>
-                                            <li><a href="classes/termTemplates-LiteralTemplate.html#method___toString">__toString()</a></li>
-                                            <li><a href="classes/termTemplates-LiteralTemplate.html#method_equals">equals()</a></li>
+                                            <li><a href="classes/termTemplates-ValueTemplate.html#method___construct">__construct()</a></li>
+                                            <li><a href="classes/termTemplates-ValueTemplate.html#method___toString">__toString()</a></li>
+                                            <li><a href="classes/termTemplates-ValueTemplate.html#method_equals">equals()</a></li>
                                     </ul>
             </li>
                     </ul>
