@@ -69,23 +69,23 @@ class PredicateTemplate implements TermCompareInterface, QuadCompareInterface {
         return $this->tmpl->getGraph();
     }
 
-    public function withSubject(TermCompareInterface | string | null $subject = null): self {
+    public function withSubject(TermCompareInterface | string | null $subject = null): QuadTemplate {
         return $this->tmpl->withSubject($subject);
     }
 
-    public function withPredicate(TermCompareInterface | string | null $predicate = null): self {
+    public function withPredicate(TermCompareInterface | string | null $predicate = null): QuadTemplate {
         return $this->tmpl->withPredicate($predicate);
     }
 
-    public function withObject(TermCompareInterface | string | null $object = null): self {
+    public function withObject(TermCompareInterface | string | null $object = null): QuadTemplate {
         return $this->tmpl->withObject($object);
     }
 
-    public function withGraph(TermCompareInterface | string | null $graph = null): self {
+    public function withGraph(TermCompareInterface | string | null $graph = null): QuadTemplate {
         return $this->tmpl->withGraph($graph);
     }
 
-    public function withNegate(bool $negate): self {
+    public function withNegate(bool $negate): QuadTemplate {
         return $this->tmpl->withNegate($negate);
     }
 }
