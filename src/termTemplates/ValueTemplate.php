@@ -106,7 +106,7 @@ class ValueTemplate implements TermCompareInterface {
                     return $term->getValue() > $value;
                 };
                 break;
-            case self::LOWER;
+            case self::LOWER:
                 $this->fn = function (TermInterface $term, string $value): bool {
                     return $term->getValue() < $value;
                 };
