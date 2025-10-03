@@ -226,14 +226,14 @@
             phpdocumentor-element
             -property
             -private
-                                                        "
+                                                                    "
 >
     <h4 class="phpdocumentor-element__name" id="property_terms">
         $terms
         <a href="classes/termTemplates-AnyOfTemplate.html#property_terms" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
-                                </span>
+                                            </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/AnyOfTemplate.php"><a href="files/src-termtemplates-anyoftemplate.html"><abbr title="src/termTemplates/AnyOfTemplate.php">AnyOfTemplate.php</abbr></a></abbr>
@@ -245,13 +245,15 @@
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">iterable&lt;string|int, <a href="classes/rdfInterface-TermCompareInterface.html"><abbr title="\rdfInterface\TermCompareInterface">TermCompareInterface</abbr></a>&gt;</span>
+        <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__type">iterable&lt;string|int, <a href="classes/rdfInterface-TermCompareInterface.html"><abbr title="\rdfInterface\TermCompareInterface">TermCompareInterface</abbr></a>&gt;</span>
     <span class="phpdocumentor-signature__name">$terms</span>
     </code>
 
     
     
+    
+
     
 
     
@@ -440,6 +442,8 @@
                         if (xhr.status < 400 && xhr.responseText) {
                             code.textContent = xhr.responseText;
                             Prism.highlightElement(code);
+                            d=document.getElementsByClassName("line-numbers");
+                            d[0].scrollTop = d[0].children[1].offsetTop;
                             return;
                         }
 

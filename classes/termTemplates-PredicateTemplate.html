@@ -280,14 +280,14 @@
             phpdocumentor-element
             -property
             -private
-                                                        "
+                                                                    "
 >
     <h4 class="phpdocumentor-element__name" id="property_tmpl">
         $tmpl
         <a href="classes/termTemplates-PredicateTemplate.html#property_tmpl" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
-                                </span>
+                                            </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/termTemplates/PredicateTemplate.php"><a href="files/src-termtemplates-predicatetemplate.html"><abbr title="src/termTemplates/PredicateTemplate.php">PredicateTemplate.php</abbr></a></abbr>
@@ -299,13 +299,15 @@
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type"><a href="classes/termTemplates-QuadTemplate.html"><abbr title="\termTemplates\QuadTemplate">QuadTemplate</abbr></a></span>
+        <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__type"><a href="classes/termTemplates-QuadTemplate.html"><abbr title="\termTemplates\QuadTemplate">QuadTemplate</abbr></a></span>
     <span class="phpdocumentor-signature__name">$tmpl</span>
     </code>
 
     
     
+    
+
     
 
     
@@ -907,6 +909,8 @@
                         if (xhr.status < 400 && xhr.responseText) {
                             code.textContent = xhr.responseText;
                             Prism.highlightElement(code);
+                            d=document.getElementsByClassName("line-numbers");
+                            d[0].scrollTop = d[0].children[1].offsetTop;
                             return;
                         }
 
