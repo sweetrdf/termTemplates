@@ -77,28 +77,28 @@ class ValueTemplate implements TermCompareInterface {
         }
         switch ($this->matchMode) {
             case self::EQUALS:
-                $this->fn = function (TermInterface $term, string $value) {
+                $this->fn = function (TermInterface $term, string|null $value) {
                     return $term->getValue() === $value;
                 };
                 break;
             case self::NOT_EQUALS:
-                $this->fn = function (TermInterface $term, string $value) {
+                $this->fn = function (TermInterface $term, string|null $value) {
                     return $term->getValue() !== $value;
                 };
                 break;
             case self::STARTS:
                 $this->fn = function (TermInterface $term, string $value): bool {
-                    return str_starts_with((string) $term->getValue(), $value ?? '');
+                    return str_starts_with((string) $term->getValue(), $value);
                 };
                 break;
             case self::ENDS:
                 $this->fn = function (TermInterface $term, string $value): bool {
-                    return str_ends_with((string) $term->getValue(), $value ?? '');
+                    return str_ends_with((string) $term->getValue(), $value);
                 };
                 break;
             case self::CONTAINS:
                 $this->fn = function (TermInterface $term, string $value): bool {
-                    return str_contains((string) $term->getValue(), $value ?? '');
+                    return str_contains((string) $term->getValue(), $value);
                 };
                 break;
             case self::GREATER:

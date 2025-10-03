@@ -26,6 +26,8 @@
 
 namespace termTemplates;
 
+use rdfInterface\TermInterface;
+use rdfInterface\QuadInterface;
 use rdfInterface\TermCompareInterface;
 use rdfInterface\QuadCompareInterface;
 
@@ -46,7 +48,7 @@ class NotTemplate implements TermCompareInterface, QuadCompareInterface {
         return '[not ' . $this->term . ']';
     }
 
-    public function equals(TermCompareInterface | QuadCompareInterface $term): bool {
+    public function equals(TermInterface | QuadInterface $term): bool {
         return !$this->term->equals($term);
     }
 

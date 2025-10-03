@@ -26,6 +26,7 @@
 
 namespace termTemplates;
 
+use rdfInterface\TermInterface;
 use rdfInterface\TermCompareInterface;
 
 /**
@@ -58,7 +59,7 @@ class AnyOfTemplate implements TermCompareInterface {
         return $ret;
     }
 
-    public function equals(TermCompareInterface $term): bool {
+    public function equals(TermInterface $term): bool {
         foreach ($this->terms as $i) {
             if ($i->equals($term)) {
                 return true;
