@@ -94,7 +94,7 @@ class NumericTemplate extends ValueTemplate {
                     return $termValue > $value;
                 };
                 break;
-            case self::LOWER;
+            case self::LOWER:
                 $this->fn = function (float $termValue) use ($value): bool {
                     return $termValue < $value;
                 };
